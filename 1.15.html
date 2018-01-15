@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    div{
+    height: 200px;
+    width: 200px;
+    background-color: red;
+    overflow: hidden;
+    float: left;
+    position: absolute;
+
+    }
+    .test1{
+    height: 400px;
+    width: 400px;
+    margin-top: 20px;
+    }
+    .test2{
+    background-color: blue;
+    margin-top: 30px;
+    }
+    .test2:after{
+    content: url("1.png");
+    clear: left;
+    }
+
+    .test3{
+    width: 800px;
+    background-color: green;
+    overflow: hidden;
+    position: absolute;
+    display: inline-block;
+    }
+    .test1{
+    width: 400px;
+    height: 400px;
+    background-color: red;
+    float: left;
+    }
+    .test2{
+    width: 200px;
+    height: 200px;
+    background-color: blue;
+    float: left;
+    }
+    .test3:after{
+    content: "";
+    clear: both;
+    display: block;
+
+    }
+
+    .aa{
+    font-size: 10px;
+    }
+    .bb{
+    font-size: 30px ;
+    }
+    .cc{
+    font-size: 40px;
+    }
+        span{
+            vertical-align: middle;
+        }
+
+        li{
+            display: inline-block;
+            height: 100px ;
+            width: 100px;
+            background-color: yellow;
+            margin-left: 4px;
+            vertical-align: top;
+        }
+        .dd{
+            height: 50px;
+
+        }
+
+
+        div{
+            height: 100px;
+            width: 100px;
+            background-color: #552222;
+            float: left;
+            margin-left: 10px;
+            vertical-align: middle;
+        }
+        .ee{
+            height: 10px;
+        }
+
+
+      ul{
+          width: 100%;
+          list-style-type: none;
+          float: left ;
+          margin: 0;
+          padding: 0;
+
+      }
+    li{
+        float: left;
+        margin-left: 1px;
+    }
+        a{
+            text-decoration: none;
+            background-color: deeppink;
+            padding: 10px;
+            display: inline-block;
+            width: 120px;
+            color: white;
+            font-weight: bold;
+            font-size: 20px;
+
+
+        }
+ a:hover{background-color: orangered}
+
+
+
+
+    </style>
+    </head>
+    <body>
+    <div class="test3">
+    <div class="test1"></div>
+    <div class="test2"></div>
+    </div>
+
+    <ul>
+        <li></li>
+        <li class="dd"></li>
+        <li></li>
+    </ul>
+
+
+    <div></div>
+    <div class="ee"></div>
+    <div></div>
+
+
+    <ul>
+        <li><a href="http://www.baidu.com" target="_blank">Link one</a> </li>
+        <li><a href="http://www.baidu.com" target="_blank">Link two</a> </li>
+        <li><a href="http://www.baidu.com" target="_blank">Link three</a></li>
+        <li><a href="http://www.baidu.com"target="_blank"> Link four</a></li>
+    </ul>
+
+
+ </body>
+   </html>
