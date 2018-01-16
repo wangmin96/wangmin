@@ -1,0 +1,164 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+/* header.css start*/
+.header a{
+    display: block;
+}
+.header{
+    line-height: 0;
+    width: 1130px;
+    margin: 0 auto;
+}
+/* header.css end*/
+/* container.css start*/
+.container{
+    background: url("../image/3.jpg") center;
+    height: 588px;
+}
+.container .login-bar {
+    width: 1130px;
+    margin: 0 auto;
+}
+.container .login-form {
+    width: 400px;
+    height: 524px;
+    background-color:white;
+    float: right;
+    margin-top: 32px;
+}
+.container .top-text{
+    padding: 27px 0 24px;
+    text-align: center;
+}
+.container .top-text{
+  font-size: 24px;
+}
+.container .top-text a{
+    text-decoration: none;
+    color: #666;
+
+}
+.container .border-line{
+    margin: 0 35px;
+    border: 1px solid gainsboro;
+}
+.container .top-text a:first-child{
+    color: orangered;
+}
+.container .top-text a:hover{
+    color: orangered;
+}
+.container .login-input{
+    margin: 0 auto;
+    width: 348px;
+}
+.container .login-input input{
+    width: 300px;
+    height: 22px;
+    padding:13px 26px 13px 14px;
+    font-family: arial,"Hiragino Sans GB","Microsoft YaHei",sans-serif;
+    font-size: 100%;
+    margin-bottom: 14px;
+}
+.container .login-content{
+    width: 348px;
+    margin:0 auto;
+}
+.container .login-btn input{
+   background-color: #f56600;
+    color: white;
+    width: 100%;
+    height: 50px;
+    border: none;
+    font-size: 14px;
+    cursor: pointer;
+
+}
+.container .small-text{
+    font-size: 14px;
+    color: #757575;
+}
+.container .small-text a{
+    text-decoration: none;
+    color: #757575;
+}
+.container .st-left{
+    float: left;
+}
+.container .st-left a{
+    color: orangered;
+}
+.container .st-right{
+    float: right;
+}
+.container .st-right a:hover{
+    color: orangered;
+}
+.container .login-type{
+    margin-top: 150px;
+}
+.container .login-type fieldset{
+    border: 0px;
+    border-top: 1px solid #bbbbbb;
+    color: #bbbbbb;
+    font-size: 16px;
+    padding-top: 10px;
+}
+.container .login-icon{
+    text-align: center;
+}
+.container .login-icon a{
+    width: 30px;
+    height: 30px;
+    background-color: #757575;
+    display: inline-block;
+    border-radius: 50%;
+    margin: 0 17px;
+
+
+}
+.container .login-icon i{
+    display: block;
+    width: 18px;
+    height: 18px;
+    background-image: url("../image/2.png");
+    margin: 4px auto 0;
+
+}
+.container .qq:hover{
+    background-color: #0288d1;
+}
+.container .qq i{
+    background-position: -19px 0;
+}
+.container .sina:hover{
+    background-color: #d32f2f;
+}
+.container .sina i{
+    background-position: -38px 0;
+}
+.container .alipay:hover{
+    background-color: deepskyblue;
+}
+.container .alipay i{
+    background-position: -57px 0;
+    width: 25px;
+}
+.container .wechat:hover{
+    background-color: limegreen;
+}
+.container .wechat i{
+    background-position: -84px 0;
+    width: 23px;
+
+}
+/*.clearfix:after{*/
+    /*content: url("../image/2.png");*/
+    /*clear: both;*/
+    /*display: block;*/
+    
+
+
+/* container.css end*/
