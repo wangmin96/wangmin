@@ -160,3 +160,101 @@
     background-color: #ff4600;
 }
 /*header end*/
+/*home start*/
+.home{
+    float: left;
+    padding: 0 62px;
+}
+.home .home-top a{
+    display: block;
+    width: 100%;
+}
+.home-dir{
+    position: absolute;
+    top: 135px;
+    left: 62px;
+    width: 234px;
+    height: 460px;
+    font-size: 14px;
+    margin-top: -19px;
+}
+.home-dir ul{
+    display: block;
+    list-style-type: none;
+    padding: 20px 0;
+
+}
+.home-dir a{
+    color: #b0b0b0;
+    text-decoration: none;
+    display: block;
+    padding-left: 30px;
+    height: 46px;
+    line-height: 46px;
+    background:rgba(0,0,0,0.7);
+}.iconfont {
+     float: right;
+     margin-right: 15px;
+     font-size: 20px;
+ }
+.home-dir a:hover{
+    background-color:#ff6700;
+}
+.ui-left .iconfont{
+    display: block;
+    position: relative;
+    float: left;
+    margin-top: -244px;
+    margin-left: 263px;
+    color: #b0b0b0;
+    font-size: 45px;
+}
+.ui-left . a:hover{
+    color: #ff6700;
+}
+.ui-right .iconfont{
+    display: block;
+    position: relative;
+    float: right;
+    margin-top: -244px;
+}
+.ui-right .iconfont a{
+    display: block;
+    font-size: 50px;
+    color: #b0b0b0;
+}
+.ui-right .iconfont a:hover{
+    color: #ff6700;
+}
+.home-bottom{
+    margin-top: 14px;
+    width: 100%;
+
+}
+.home-bottom .pic-1 a{
+    float: left;
+
+}
+.home-bottom .pic-2 a{
+    display:block;
+    width: 5px;
+    height: 5px;
+    float: left;
+    border: 0;
+    margin-left: -14px;
+}
+.home-bottom .pic-3 a{
+    display: block;
+    width: 5px;
+    height: 5px;
+    float: left;
+    margin-left: -14px;
+}
+.home-bottom .pic-4 a{
+    display: block;
+    width: 5px;
+    height: 5px;
+    float: left;
+    margin-left: -14px;
+}
+/* home end*/
