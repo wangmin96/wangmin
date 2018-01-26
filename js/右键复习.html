@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        ul{
+            border: 1px solid #b0b0b0;
+            width: 130px;
+            text-align: center;
+            list-style-type: none;
+            top: 0;
+            left: 0;
+            display: none;
+            position: absolute;
+
+        }
+        ul li{
+            border-bottom: 1px solid #b0b0b0;
+            text-align: center;
+            padding: 3px 10px;
+
+
+        }
+    </style>
+</head>
+<body>
+    <ul id="ul-menu" class="ul-cn">
+        <li class="all" links="www.baidu.com">设置待办</li>
+        <li>设置未读</li>
+        <li>设置已读</li>
+        <li>删除邮筒</li>
+    </ul>
+<script>
+    var oUl=document.getElementById("ul-menu");
+    var aLi=document.getElementsByTagName("li");
+    document.oncontextmenu= function(e){
+        oUl.style.display="block";
+        oUl.style.top=e.clientY+"px";
+        oUl.style.left=e.clientX+"px";
+        return false;
+    }
+//    document.onclick=function () {
+//        oUl.style.display="none";
+//    }
+    for(var i=0;i<aLi.length;i++){
+        aLi[i].onclick=function () {
+            location.href="http://www.baidu.com";
+//            var thistext=this.innerHTML;
+//            alert(thistext);
+        }
+    }
+//var oUL = document.getElementById("ul-menu");
+//var aLI = document.getElementsByTagName("li");
+//document.oncontextmenu =function (e) {
+//    e=e ||window.event;
+//
+//    oUL.style.display="block";
+//    oUL.style.top=e.clientY+"px";
+//    oUL.style.left=e.clientX+"px";
+//    return false;
+//}
+//document.onclick=function () {
+//    oUL.style.display="none";
+//}
+//
+//for(var i=0;i<aLI.length;i++){
+//    aLI[i].onclick=function () {
+//        location.href="http://www.baidu.com";
+//        var thistext=this.innerHTML;
+//        alert(thistext);
+//
+//    }
+//}
+</script>
+</body>
+</html>
