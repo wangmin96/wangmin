@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: #333333;
+        }
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        ul li{
+            list-style-type: none;
+
+        }
+
+        .box{
+            margin: 30px auto;
+            width: 1000px;
+            height: 600px;
+            padding: 10px;
+            border-radius: 10px;
+            background-color: #dddddd;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .radio-btn{
+            position: absolute;
+        }
+        .radio-btn li{
+            height: 20px;
+            width: 20px;
+            background: #ff6700;
+            opacity: 0.7;
+            float: left;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 20px;
+            font-size: 14px;
+            color: #dddddd;
+            margin-left: 10px;
+        }
+        .radio-btn .active{
+            background-color: red;
+        }
+        .left-bt{
+            left: 10px;
+            bottom: 10px;
+        }
+        .left-bt li{
+            line-height: 17px;
+        }
+        .right-bt{
+            right: 10px;
+            bottom: 10px;
+        }
+
+
+
+    </style>
+</head>
+<body>
+<div class="box">
+    <div class="image">
+        <ul>
+        <li><img src="0aff22b8667c7eea572108425737a27f.jpg"></li>
+        <li><img src="1fcd5e256c36cc4540c1925bf28853ec.jpg"></li>
+        <li><img src="3e9d96ae7349a448836922e8ad942d93.jpg"></li>
+        <li><img src="67bb56dafd1299fb937ea428d73ccb9b.jpg"></li>
+        <li><img src="659059871c9c948f90b1a4980582b97a.jpg"></li>
+        </ul>
+    </div>
+    <div>
+        <ul class="radio-btn left-bt">
+            <li this-type="prev">&lt;</li>
+            <li this-type="next">&gt;</li>
+        </ul>
+    </div>
+    <div>
+        <ul class="radio-btn right-bt">
+            <li class="active">1</li>
+            <li class="">2</li>
+            <li class="">3</li>
+            <li class="">4</li>
+            <li class="">5</li>
+        </ul>
+    </div>
+</div>
+<script>
+    var oBox=document.getElementsByClassName("box");
+    var aUl=document.getElementsByTagName("ul");
+    var aImg=document.getElementsByTagName("li");
+    var aLbt=aUl[1].getElementsByTagName("li");
+    var aRbt=aUl[2].getElementsByTagName("li");
+    var globalIndex=0;
+    var isInterval=true;
+
+
+    function changeImg(index) {
+        if(index==5){
+            index=0;
+            globalIndex=0;
+        }
+        if(index==-1) {
+            index = 4;
+            globalIndex = 4;
+        }
+
+        for(var j=0;j<aRbt.length;j++){
+            aRbt[j].className="";
+            aImg[j].style.display="none";
+        }
+        aRbt[index].className="active";
+        aImg[index].style.display="block";
+    }
+
+
+    for(var i=0;i<aRbt.length;i++){
+        aRbt[i].index=i;
+        aRbt[i].onmouseover=function () {
+          globalIndex=this.index;
+          changeImg(globalIndex)
+        }
+    }
+    for(var k=0;k<aLbt.length;k++){
+        aLbt[k].onclick=function () {
+            var thisType=this.getAttribute("this-type");
+            if(thisType=="next"){
+                changeImg(++globalIndex);
+
+            }else {
+                changeImg(--globalIndex);
+            }
+        }
+    }
+
+   timer=setInterval(function () {
+       if(isInterval){
+           changeImg(globalIndex++);
+       }
+   },1000);
+    oBox[globalIndex].onmouseover=function () {
+        isInterval = false;
+    }
+    oBox[globalIndex].onmouseout=function () {
+        isInterval=true;
+    }
+</script>
+
+</body>
+</html>
