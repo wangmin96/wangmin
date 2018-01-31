@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #time-bar{
+            width: 200px;
+            height: 200px;
+            margin: 50px auto;
+            background-color: #FF9900;
+            position: relative;
+        }
+        #time-area{
+            font-size: 50px;
+            text-align: center;
+            position: absolute;
+            top: 20px;
+            left: 50px;
+        }
+        #time-btn{
+
+            width: 60px;
+            height: 30px;
+            text-align: center;
+            position: absolute;
+            bottom: 40px;
+            left: 75px;
+        }
+    </style>
+</head>
+<body>
+<div id="time-bar">
+    <h1 id="time-area">100</h1>
+    <button id="time-btn">开始</button>
+</div>
+<script>
+    var oBar=document.getElementById("time-bar");
+    var oTimer=document.getElementById("time-area");
+    var oBtn=document.getElementById("time-btn");
+    var num=100;
+    var timer;
+
+    function changeNum() {
+        oTimer.innerText=num;
+        num--;
+    }
+
+    timer.onmouseover()
+
+
+
+
+
+
+
+
+
+
+
+
+
+//    var num=100;
+//    var key=1;
+//    var timer;
+//
+//    function changeNum() {
+//        oTimer.innerText=num;
+//        num--;
+//    }
+//    oBtn.onclick=function () {
+//        if(key==1){
+//            timer=setInterval(changeNum,1000);
+//            oBtn.innerText="开始";
+//        }else {
+//            clearInterval(timer);
+//            oBtn.innerText="暂停";
+//        }
+//        key*=-1;
+//    }
+
+
+
+</script>
+
+</body>
+</html>
