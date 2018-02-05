@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="jquery-3.3.1.js"></script>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        .focus{
+            margin: 5px 0;
+            border: 1px solid #f00;
+            background-color:lightpink;
+        }
+        input{
+            width: 12em;
+            outline: none;
+        }
+        textarea{
+            width: 12em;
+            outline: none;
+        }
+
+
+    </style>
+</head>
+<body>
+<form method="post" id="regForm">
+    <fieldset>
+        <legend>个人基本信息</legend>
+        <div>
+            <label for="uesername">名称</label>
+            <input id="uesername" type="text" value="名称" >
+        </div>
+        <div>
+            <label for="password">密码</label>
+            <input id="pass" type="password" value="密码" />
+        </div>
+        <div>
+            <label for="information">详细信息：</label>
+            <textarea id="information" rows="2" cols="28">详细信息</textarea>
+        </div>
+    </fieldset>
+</form>
+<script>
+    $(function () {
+        $(":input").focus(function () {
+            $(this).addClass("focus");
+            if($(this).val()== this.defaultValue){
+                $(this).val("")
+            }
+        }).blur(function () {
+            $(this).removeClass("focus").val(this.value==""?this.defaultValue:$(this).val());
+        })
+    })
+
+
+
+</script>
+</body>
+</html>
