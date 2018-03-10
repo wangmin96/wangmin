@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .box{
+            display: -webkit-box;
+            /*-webkit-box-orient: vertical;*/
+            -webkit-box-pack: center;
+        }
+        .box div{
+            height: 100px;
+            width: 100px;
+
+
+            /*float: left;*/
+
+        }
+        .div1{
+            background:#fe3f55;
+            /*-webkit-box-flex: 1;*/
+            -webkit-box-ordinal-group: 3;
+        }
+        .div2{
+            background: #665e57;
+            /*-webkit-box-flex: 1;*/
+            -webkit-box-ordinal-group: 2;
+        }
+        .div3{
+            background: #0099ff;
+            /*-webkit-box-flex: 1;*/
+            -webkit-box-ordinal-group: 1;
+        }
+
+    </style>
+</head>
+<body>
+<div class="box">
+    <div class="div1"></div>
+    <div class="div2"></div>
+    <div class="div3"></div>
+</div>
+<div class="box">
+    <div class="center"></div>
+    <div class="left"></div>
+    <div class="right"></div>
+</div>
+</body>
+</html>
