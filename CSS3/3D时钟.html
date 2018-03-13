@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style class="css">
+        *{
+            margin:0;
+            padding: 0;
+        }
+        .box{
+            width: 200px;
+            height: 200px;
+            border:2px dashed #333333;
+            position: relative;
+            margin:  100px auto ;
+        }
+        .clock{
+            list-style: none;
+            border: 1px solid #333333;
+            width: 196px;
+            height: 196px;
+            border-radius: 50%;
+        }
+        .clock li{
+            position: absolute;
+            left: 50%;
+            margin-left: -1px;
+            top:1px;
+            width: 2px;
+            height: 6px;
+            background: #000000;
+            transform-origin: 0 98px;
+        }
+        .clock li:nth-child(5n+1){
+            height: 10px;
+        }
+        .box div{
+            position: absolute;
+            left: 50%;
+            transform-origin: bottom;
+        }
+        .hour{
+            width: 6px;
+            height: 40px;
+            top: 60px;
+            margin-left: -3px;
+            background-color: #333333;
+
+        }
+        .minute{
+            width: 4px;
+            height: 55px;
+            top: 45px;
+            margin-left: -2px;
+            background-color: #757575;
+
+
+        }
+        .second {
+            width: 2px;
+            height: 70px;
+            top: 30px;
+            margin-left: -1px;
+            background-color: #fe3f55;
+        }
+
+    </style>
+</head>
+<body>
+<div class="box">
+        <ul class="clock" id="clock-box"></ul>
+        <div class="hour" id="clock-hour"></div>
+        <div class="minute" id="clock-minute"></div>
+        <div class="second" id="clock-second"></div>
+</div>
+<script>
+   var oClock=document.getElementById("clock-box");
+   var oHour=document.getElementById("clock-hour");
+   var oMinute=document.getElementById("clock-minute");
+   var oSecond=document.getElementById("clock-second");
+   for(var i=0;i<60;i++){
+       oClock.innerHTML+='<li style="transform: rotate('+i*6+'deg)"></li>';
+   }
+   clock();
+   function clock() {
+       var timer=new Date();
+       var second=timer.getSeconds();
+       var minute=timer.getMinutes()+second/60;
+       var hour=timer.getHours()+minute/60;
+
+
+       oSecond.style.transform='rotate('+6*second+'deg)';
+       oMinute.style.transform='rotate('+6*minute+'deg)';
+       oHour.style.transform='rotate('+30*hour+'deg)';
+   }
+    setInterval(function () {
+        clock()
+    },1000);
+
+
+</script>
+</body>
+</html>

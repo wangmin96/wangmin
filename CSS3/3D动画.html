@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .box{
+            margin: 100px auto;
+            width: 200px;
+            height: 200px;
+            border: 1px solid #fe3f55;
+            perspective: 1000px;
+            perspective-origin: center center;
+
+            /*设置中心点*/
+            /*perspective-origin: 1000px 1000px;*/
+        }
+        .div1{
+            width: 200px;
+            height: 200px;
+            background: #ff4600;
+            transform-style: preserve-3d;
+            transform: rotateZ(45deg);
+        }
+        .div2{
+            width: 200px;
+            height: 200px;
+            background: #0099ff;
+            transform: rotateY(30deg);
+        }
+    </style>
+</head>
+<body>
+<div class="box">
+    <div class="div1">
+        <div class="div2">
+
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
