@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    *{
+        margin:0;
+        padding:0;
+    }
+    #box{
+        background: #333333;
+    }
+</style>
+<body>
+<canvas id="box" width="400px" height="400px">
+
+</canvas>
+<script>
+    var oBox=document.querySelector("#box");
+    var context=oBox.getContext("2d");
+    context.beginPath();
+    context.moveTo(10,10);
+    context.lineTo(100,100);
+    context.lineWidth=10;
+    context.strokeStyle="#aaa";
+    context.lineCap="round";
+    context.stroke()
+
+    context.beginPath();
+    context.moveTo(200,200);
+    context.lineTo(400,400);
+    context.lineWidth=10;
+    context.strokeStyle="#adf";
+    context.lineCap="butt";
+    context.stroke();
+
+</script>
+
+</body>
+</html>

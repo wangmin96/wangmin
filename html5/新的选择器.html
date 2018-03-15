@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div class="box1" id="box">
+    <div class="div1">1</div>
+    <div class="div1">2</div>
+</div>
+<script>
+    var oDiv=document.getElementById("box");
+    var queryDom=document.querySelectorAll(".div1");
+    var tagDom=document.getElementsByTagName("div");
+    oDiv.classList.add("style");
+    console.log(tagDom);
+    console.log(queryDom);
+    console.log(oDiv.children)
+    console.log(oDiv.childNodes)
+</script>
+
+</body>
+</html>
