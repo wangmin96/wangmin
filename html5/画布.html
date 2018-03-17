@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #box{
+            background: #333333;
+        }
+    </style>
+</head>
+<body>
+<canvas width="800px" height="800px" id="box"></canvas>
+<script>
+    var oBox=document.querySelector("#box");
+    var oContext=oBox.getContext("2d");
+    oBox.onmousedown=function (e) {
+        oContext.beginPath();
+        oContext.moveTo(e.clientX,e.clientY);
+        oBox.onmousemove=function (e) {
+            oContext.lineTo(e.clientX,e.clientY);
+            oContext.lineWidth=10;
+            oContext.strokeStyle="#666";
+            oContext.stroke()
+        }
+        oBox.onmouseup=function () {
+            oBox.onmousemove=null;
+        }
+
+
+    }
+
+</script>
+
+</body>
+</html>

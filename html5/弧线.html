@@ -9,10 +9,30 @@
         margin: 0;
         padding: 0;
     }
-    
+    #box{
+        width: 800px;
+        height: 800px;
+        background: #333333;
+    }
 </style>
 <body>
-<div id="box"></div>
+<canvas id="box"></canvas>
+<script>
+    var oBox=document.querySelector("#box");
+    var context=oBox.getContext("2d");
+    var x=oBox.width/8;
+    var y=oBox.width/8;
+    var radius=30;
+    var startAngle=0*Math.PI;
+    var endAngle=1.9*Math.PI;
+    var counterClockwise=false;
+    context.beginPath();
+    context.arc(x,y,radius,startAngle,endAngle,counterClockwise);
+    context.lineWidth=10;
+    context.strokeStyle="#854";
+    context.stroke();
+
+</script>
 
 </body>
 </html>
