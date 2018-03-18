@@ -12,13 +12,23 @@ require(["dialog","jquery"],function (Dialog,$) {
 // oBtn.onclick=function () {
 // dialog.open()
 // }
+    var settings={
+        height:300,
+        title:"登录",
+        content:"a.html"
+    }
+    var settings1={
+        height:500,
+        title:"登录",
+        content:"登陆成功"
+    }
     $("#btn1").click(function () {
         var dialog1=new Dialog();
-        dialog1.open()
+        dialog1.open(settings)
     })
     $("#btn").click(function () {
         var dialog=new Dialog();
-        dialog.open();
+        dialog.open(settings1);
     })
     //AMD
     //CMD

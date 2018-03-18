@@ -15,11 +15,30 @@ define(["jquery"],function () {
         this.$title=$('<div class="dialog-title">注册</div>');
         this.$close=$('<div class="dialog-btn" id="close">[X]</div>');
         this.$content=$('<div class="dialog-content"></div>');
+        this.defaultSettings={
+            width:400,
+            height:300,
+            title:"弹框",
+            content:""
+        }
     }
-    Dialog.prototype.open=function () {
+    Dialog.prototype.open=function (settings) {
+        $.extend(this.defaultSettings,settings);
         this.$box.append(this.$mask).append(this.$container);
         this.$container.append(this.$header).append(this.$content);
         this.$header.append(this.$title).append(this.$close);
+        this.$container.css({
+            width:this.defaultSettings.width,
+            height:this.defaultSettings.height
+
+        })
+        this.$title.text(this.defaultSettings.title);
+        // this.$content.text(this.defaultSettings.content)
+        if(this.defaultSettings.content.indexOf("html")!=-1){
+            this.$content.load("js/a.html")
+        }else {
+            this.$content.html(this.defaultSettings.content)
+        }
         $("body").append(this.$box);
         var This=this;
         this.$close.click(function () {
