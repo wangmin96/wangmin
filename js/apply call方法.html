@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<script>
+//    function aa(index,aaa) {
+//        console.log(this);
+//        console.log(index)
+//        console.log(aaa)
+//    }
+//    var person={
+//        name:"jiawenxue",
+//        habit:"chishi"
+//    }
+//    aa.call(person,"11","222")
+
+
+
+//    function aa(index ,aaaa) {
+//        console.log(this);
+//        console.log(index);
+//        console.log(aaaa)
+//    }
+//    person={
+//        name:"wangmin",
+//        advantages:"wonderful"
+//    }
+//    aa.apply(person,["1111","2222"])
+
+
+
+//    function fn3() {
+//       // console.log("div3");
+//        console.log(this);
+//    }
+//    oDiv3.attachEvent("onclick",function () {
+//        fn3.call(oDiv3);
+//    })
+
+    oDiv3=function () {
+        console.log("div3");
+    }
+    function fn1() {
+        console.log(this)
+    }
+    addEvent(oDiv3,"click",fn1);
+        function addEvent(elem,eve,fun) {
+            if (elem.addEventListener) {     //能力测试
+                elem.addEventListener(eve, fun)
+            } else if (elem.attachEvent) {
+                var thisFun =function () {
+                    fun.call(elem);
+                }
+                elem.attachEvent("on" + eve, thisFun);
+            } else {
+                elem["on" + eve] = fun;
+            }
+        }
+    oDiv3.onclick=function () {
+        fn1();
+    }
+
+//
+//    oDiv2=function () {
+//        console.log("div2");
+//    }
+//    function fn1() {
+//        console.log("1");
+//    }
+//    detachEvent(oDiv2,"onclick",fn1)
+//
+
+//        oDiv2.addEventListener("click",fn2);
+//        oDiv2.removeEventListener("click",fn2);
+//        oDiv2.attachEvent("click",fn2);
+//        oDiv2.detachEvent("click",fn2);
+
+
+    oBtn1.onclick=function () {
+        oUl.appendChild(oNewNode);
+        
+    }
+
+//    oUl.onclick=function (e) {
+//       // var This=e.target;
+//        var This=e||window.event.srcElement;
+//        console.log(This.innerHTML)
+//    }
+
+    oUL.onclick=function () {
+        var This=window.event.srcElement||e.target;
+        console.log(This.innerHTML);
+    }
+</script>
+</body>
+</html>

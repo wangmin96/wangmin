@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #time-bar{
+            width: 150px;
+            height: 150px;
+            margin: 10px auto;
+            background-color: #0288d1;
+        }
+        #time-area{
+            font-size: 40px;
+            text-align: center;
+            margin-top: 50px;
+        }
+        #btn{
+           margin-left: 50px;
+
+
+        }
+    </style>
+</head>
+<body>
+<div id="time-bar">
+    <h1 id="time-area">100</h1>
+    <button id="btn">开始</button>
+</div>
+<script>
+    var oTimer=document.getElementById("time-area");
+    var oBtn=document.getElementById("btn");
+    var num=100;
+    var key=1;
+    var timer;
+    function changeNum() {
+        oTimer.innerText=num;//显示文本内容
+        num--;
+    }
+   oBtn.onclick=function () {
+        if(key==1){
+           timer=setInterval("changeNum()",1000);
+           this.innerText="暂停";
+        }else {
+            clearInterval(timer);
+            this.innerText="开始";
+        }
+        key *=-1
+    }
+
+</script>
+
+
+</body>
+</html>

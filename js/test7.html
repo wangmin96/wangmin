@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    //随机生成两个小数给变量x.y，然后显示这两个数中的最大值。
+    // （提示：语句“var x=Math.random();”可为变量生成一个随机小数：另外，使用条件运算符‘'?:")
+//    var x=Math.random();
+//    var y=Math.random();
+//    window.alert("x="+x);
+//    window.alert("y="+y);
+//    var z=x>y  ? x:y;
+//    window.alert(z)
+
+
+    //如果某年的年份值是4的倍数并且不是100的倍数，或者该年份值是400的倍数，那么这一年就是闰年。
+    // 请编制一个页面，该页面显示当天是否处于闰年。
+    //提示：使用以下语句，可使变量year的值就是当天所属的年份值。
+    //var today = new Date();   //获取当天日期
+    //var year = today.getFullYear();   //获取当天年份
+
+//    var today=new  Date();
+//    var year=today.getFullYear();
+//    year=window.prompt("今年是哪一年");
+//    if(year%4==0 &&year%100!==0 ||year%400==0){
+//        window.alert("今年是闰年");
+//    }else {
+//        window.alert("今年不是闰年");
+//    }
+
+
+    //编写程序．通过用户输入的年龄判断是哪个年龄段的人
+    // （儿童：年龄＜14；青少年：14<=年龄＜24；青年：24<年龄＜40; 中年：40＜=年龄＜60; 老年：年龄>=60），
+    // 并在页面上输出判断结果。
+//   var year=window.prompt("今年你多少岁啦！");
+//   if(year<14){
+//       alert("你是儿童啊");
+//   }else if(year >=14&&year<24){
+//       alert("你是青少年啊");
+//   }else if(year >24 && year<40){
+//       alert("你是青年啊");
+//   }else if(year>=40 &&year <60){
+//       alert("你是中年啊");
+//   }else {
+//       alert("你是老年啊");
+//   }
+
+    //2.编写程序，根据据用户输入的一个数字(0~6)．
+    // 通过警示对话框显示对应的星期几(0: 星期日; 1: 星期一;……6: 星期六;)。
+//    var which=parseInt(window.prompt("请输入数字0~6"));
+//    if(which){
+//        switch(which){
+//            case 0:
+//                alert("星期日");
+//                break;
+//            case 1:
+//                alert("星期一");
+//                break;
+//            case 2:
+//                alert("星期二");
+//                break;
+//            case 3:
+//                alert("星期三");
+//                break;
+//            case 4:
+//                alert("星期四");
+//                break;
+//            case 5:
+//                alert("星期五");
+//                break;
+//            case 6:
+//                alert("星期六");
+//                break;
+//            default:
+//                prompt("输入的数字错误，请重新输入")
+//        }
+//    }
+    //编写程序，计算10!(即 1*2*3＊·…10）的结果(10的阶乘)。
+//    var num=1;
+//    for(var i=0;i<11;i++){
+//       var a=i+1;
+//       num *=a;
+//    }
+//    console.log(num);
+
+   // 编写程序，计算 1!+2!+3!+…..＋10！的结果。
+//    var sum=1;
+//    var sum1=0;
+//    for(var i=0;i<11;i++){
+//        var a=i+1;
+//        sum *=a;
+//        sum1 +=sum;
+//    }
+//    console.log(sum1);
+
+    //5.在页面上输出如下数字图案。
+   // 1
+   // 1 2
+    //1 2 3
+    //1 2 3 4
+    // 1 2 3 4 5
+    // 其中，每行的数字之间有一个空格间隔。
+//    for(var i=1;i<=5;i++){
+//        for(var j=1;j<=i;j++) {
+//            document.write("&nbsp;",j);
+//        }
+//        document.write("<br>");
+//    }
+
+    //6.在页面上输出如下图案。
+    //其中，每行的星号"*"之间有一个空格间隔。
+//    for(var i=1;i<6;i++){
+//        for(var j=6-i;j>=1;j--){
+//                document.write("&nbsp;");
+//            }
+//        for(var k=1;k<=i;k++) {
+//            document.write("&nbsp;*");
+//        }
+//        document.write("<br>");
+//    }
+
+    //有一个三位数x，被4除余2，被7除余3，被9除余5，请求出这个数。
+//    for (var x=100;x<=1000;x++) {
+//        if (x % 4 == 2 && x % 7 == 3 && x % 9 == 5) {
+//            console.log(x);
+//        }
+//    }
+
+
+    //8.求所有满足条件的四位数ABCD，它是13的倍数，且第3位数加上第2位数等于第4位数（即：A=B+C）。
+    // （提示：对于四位数的整数x，通过Math.floor(x/1000)可求出第4位的数字，其他位数的提取也类似） 
+//    var no2=0,no3=0,no4=0;
+//    for(var i=1000;i<10000;i++){
+//        no4=Math.floor(i/1000);
+//        no3=Math.floor(i/100)%10;
+//        no2=Math.floor(i/10)%10;
+//        if(i%13==0 && no4==no3+no2){
+//            console.log(i);
+//        }
+//    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+
+</body>
+</html>

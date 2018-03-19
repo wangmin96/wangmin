@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="jquery-3.3.1.js"></script>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        ul li{
+            list-style-type: none;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+<div id="box">
+    <input type="text" value="" id="inp">
+    <ul>
+        <li>iphone4</li>
+        <li>iphone5</li>
+        <li>iphone6</li>
+        <li>iphone7</li>
+        <li>phone</li>
+        <li>telphone</li>
+        <li>ipod</li>
+        <li>ipad</li>
+        <li>iphoneX</li>
+        <li>iphone4s</li>
+    </ul>
+</div>
+<script>
+//  $("#inp").keyup(function () {
+//      $("li").css("background-color","none");
+//      if($(this).val()!=""){
+//          $("li:contains("+$(this).val()+")").css("background-color","red");
+//      }
+//
+//})
+
+
+    $("#inp").keyup(function () {
+        $("li").css("background-color","none");
+        if($(this).val()!=""){
+            $("li:contains("+$(this).val()+")").css("background-color","red")
+        }
+    })
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        p{
+            margin: 20px auto;
+            width: 300px;
+            height: 50px;
+        }
+    </style>
+</head>
+<body>
+<p><input type="text" placeholder="跳转网址"><br></p>
+<p><button id="btn">跳转</button></p>
+
+<script>
+    var oInput=document.getElementsByTagName("input");
+    var oBtn=document.getElementById("btn");
+
+    oBtn.onclick=function () {
+       var thisVal= aInput[0].value;
+       location.href="http://"+thisVal
+    }
+    oInput[0].onkeydown=function (e) {
+        var thisVal=oInput[0].value;
+        var keyCod=e.keyCode;
+        if(keyCod==13){
+            location.href="http://"+thisVal;
+        }
+    }
+
+
+
+
+
+
+
+
+
+
+//   var aInput=document.getElementsByTagName("input");
+//   var oButton=document.getElementById("btn");
+//   oButton.onclick=function () {
+//      var thisVal=aInput[0].value;
+//      location.href="http://"+thisVal;
+//   }
+//   aInput[0].onkeydown=function (e) {
+//       var thisVal = aInput[0].value;
+//       var keyCod = e.keyCode;
+//       if (keyCod == 13) {
+//           location.href = "http://" + thisVal;
+//       }
+//   }
+//    var aInput=document.getElementsByTagName("input");
+//    var oButton=document.getElementById("btn");
+//    oButton.onclick=function () {
+//        var thisVal=aInput[0].value;
+//        location.href="http://"+thisVal;
+//    }
+//    aInput[0].onkeydown=function (e) {
+//        var thisVal=aInput[0].value;
+//        var keyCod=e.keyCode;
+//        if(keyCod ==13){
+//            location.href="http://"+thisVal;
+//        }
+//    }
+
+
+
+
+
+
+
+</script>
+
+</body>
+</html>

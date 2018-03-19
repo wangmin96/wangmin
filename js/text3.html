@@ -296,20 +296,31 @@
 //            document.write("<br>")
 //        }
 //    }f()
-    function  sum(n) {
-        if(n==1){
-            return 1;
-        }
-        return sum(n-1)+n;
+
+
+
+
+//    function  sum(n) {
+//        if(n==1){
+//            return 1;
+//        }
+//        return sum(n-1)+n;
+//    }
+//    sum(4)
+
+
+
+
+
+
+function add() {
+    var sum = 0;
+    for (var i = 0, j = arguments.length; i < j; i++) {
+        sum += arguments[i];
     }
-    sum(4)
-
-    
-
-
-
-
-
+    return sum;
+}
+add(2, 3, 4, 5);
 
 
 

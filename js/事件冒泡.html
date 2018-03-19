@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .div1{
+            width: 400px;
+            height: 400px;
+            background-color: red;
+
+        }
+        .div2{
+            width: 300px;
+            height: 300px;
+            background-color: blue;
+        }
+        .div3{
+            width: 200px;
+            height: 200px;
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+<div class="div1">
+    <div class="div2">
+        <div class="div3">
+        </div>
+    </div>
+</div>
+<script>
+    var oDiv1=document.getElementsByClassName("div1")[0];
+    var oDiv2=document.getElementsByClassName("div2")[0];
+    var oDiv3=document.getElementsByClassName("div3")[0];
+
+//事件冒泡，从里向外
+//    oDiv1.onclick=function () {
+//        console.log("div1");
+//
+//    }
+//    oDiv2.onclick=function (e) {
+//        console.log("div2");
+//        e.stopPropagation();
+//
+//    }
+//    oDiv3.onclick=function () {
+//        console.log("div3");
+//
+//    }
+
+//    oDiv3.addEventListener("click",function (e){
+//        console.log("div3");
+//
+//    })
+//    oDiv2.addEventListener("click",function (e){
+//        console.log("div2");
+//        e.stopPropagation()
+//    })
+//    oDiv1.addEventListener("click",function (){
+//        console.log("div1");
+//
+//    })
+
+    //同一函数可以调用多次
+//    oDiv3.addEventListener("click",function () {
+//       console.log("div3");
+//    })
+//    oDiv3.addEventListener("click",function () {
+//        console.log("div3");
+//    })
+//    oDiv3.addEventListener("click",function () {
+//        console.log("div3");
+//    })
+
+
+//    function fn1() {
+//        console.log("1");
+//    }
+//    oDiv3.addEventListener("click",fn1);
+   // oDiv3.addEventListener("click",fn1);//同一函数只调用一次
+
+
+
+//    function fn1() {
+//        console.log("1") ;
+//        oDiv3.removeEventListener("click",fn1)
+//    }
+//    oDiv3.addEventListener("click",fn1);
+
+//false 从里往外   true从外往里
+
+    oDiv3.addEventListener("click",function () {
+        console.log("div3")
+    },true);
+    oDiv2.addEventListener("click",function () {
+        console.log("div2")
+    },true);
+    oDiv1.addEventListener("click",function () {
+        console.log("div1")
+    },true);//事件捕获从外向里         事件先捕获后冒泡
+
+
+//    oDiv3.addEventListener("mouseover",function () {
+//        console.log("div3")
+//    },false)
+//    oDiv2.addEventListener("mouseover",function () {
+//        console.log("div2")
+//    },false)
+//    oDiv1.addEventListener("mouseover",function () {
+//        console.log("div1")
+//    },false)
+
+    //IE7
+
+//    oDiv3.addEventListener("onclick",function () {
+//        console.log(this)   //this指向窗口
+//    })
+
+
+//    oDiv3.attachEvent("onclick",function () {
+//          console.log("div3")
+//    })
+//    oDiv2.attachEvent("onclick",function () {
+//        console.log("div2")
+//    })
+//
+//    oDiv1.attachEvent("onclick",function () {
+//        console.log("div1")
+//    })
+
+
+
+//    function aa() {
+//        console.log(this);  //输出window
+//    }
+//aa()
+
+
+
+
+
+//    function aa(index,dddd) {
+//        console.log(this)
+//        console.log(index,dddd)
+//    }
+//    var person={
+//        name:"xiaoming",
+//        age:"11"
+//    };
+//    aa.call(person,"11","2222");
+//    aa.apply(person,["11","222"]);//所有参数放在数组里.
+
+
+</script>
+
+</body>
+</html>

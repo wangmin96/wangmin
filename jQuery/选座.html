@@ -1,0 +1,407 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="jquery-3.3.1.js"></script>
+    <style>
+
+        /**{*/
+            /*padding: 0;*/
+            /*margin: 0;*/
+        /*}*/
+        /*body{*/
+            /*background-color: #000000;*/
+        /*}*/
+
+
+        /*.time{*/
+            /*width: 800px;*/
+            /*height: 80px;*/
+            /*margin: 0 auto;*/
+            /*background-color: #f5f5f5;*/
+            /*line-height: 80px;*/
+            /*position: relative ;*/
+        /*}*/
+        /*h1{*/
+            /*position: absolute;*/
+            /*left: 40px;*/
+        /*}*/
+        /*.list {*/
+
+            /*width: 799px;*/
+            /*height: 60px;*/
+            /*border: 1px solid #665e57;*/
+            /*margin: 0 auto;*/
+        /*}*/
+        /*ul li{*/
+            /*list-style-type: none;*/
+        /*}*/
+       /*.list .list1{*/
+           /*width: 25px;*/
+           /*height: 25px;*/
+           /*background-color: #e0e0e0;*/
+           /*color: #f5f5f5;*/
+           /*margin-top: 20px;*/
+           /*margin-left: 60px;*/
+        /*}*/
+        /*.list .list2{*/
+             /*margin-left: 170px;*/
+             /*margin-top: -25px;*/
+             /*background-color: #d32f2f;*/
+             /*color: #f5f5f5;*/
+             /*width: 25px;*/
+             /*height: 25px;*/
+         /*}*/
+        /*.list .list3{*/
+            /*margin-left: 270px;*/
+            /*margin-top: -25px;*/
+            /*background-color: #0288d1;*/
+            /*color: #f5f5f5;*/
+            /*width: 25px;*/
+            /*height: 25px;*/
+        /*}*/
+        /*p{*/
+            /*margin-left: 35px;*/
+            /*float: left;*/
+        /*}*/
+       /*.screen {*/
+          /*position: relative;*/
+           /*width: 800px;*/
+           /*margin-left: 275px;*/
+        /*}*/
+        /*img{*/
+           /*margin-left: 270px;*/
+        /*}*/
+        /*.seat2{*/
+            /*margin: 0 auto;*/
+            /*width: 600px;*/
+        /*}*/
+        /*.seat1{*/
+            /*position: relative;*/
+            /*width: 40px;*/
+            /*height: 30px;*/
+            /*background-color: #b0b0b0;*/
+            /*float: left;*/
+            /*margin-left: 10px;*/
+            /*overflow: hidden;*/
+            /*margin-top: 30px;*/
+        /*}*/
+        /*.tip{*/
+            /*position: absolute;*/
+            /*width: 650px;*/
+            /*height: 80px;*/
+            /*border-top: 1px solid #b0b0b0;*/
+            /*bottom: -200px;*/
+            /*left: 350px;*/
+        /*}*/
+        /*.left{*/
+            /*color: #e0e0e0;*/
+            /*font-size: 23px;*/
+            /*line-height: 80px;*/
+        /*}*/
+        /*.right{*/
+            /*color: #e0e0e0;*/
+            /*font-size: 23px;*/
+            /*line-height: 80px;*/
+            /*float: right;*/
+            /*margin-top: -80px;*/
+        /*}*/
+        /*.xs{*/
+            /*width: 800px;*/
+            /*height: 80px;*/
+            /*margin: 0 auto;*/
+            /*border: 1px solid #333333;*/
+            /*position: relative;*/
+            /*bottom: -610px;*/
+        /*}*/
+        /*.price{*/
+            /*width: 800px;*/
+            /*height: 80px;*/
+            /*background-color: #424242;*/
+            /*margin: 0 auto;*/
+            /*position: relative;*/
+            /*bottom: -650px;*/
+        /*}*/
+        /*.qr{*/
+            /*width: 200px;*/
+            /*height: 80px;*/
+            /*background-color: #f56600;*/
+            /*margin-left: 600px;*/
+            /*font-size: 25px;*/
+            /*line-height: 80px;*/
+            /*text-align: center;*/
+        /*}*/
+        *{
+            margin:0;
+            padding:0;
+            box-sizing: border-box;
+        }
+        body{
+            font-size: 16px;
+            background-color: #343636;
+        }
+        ul{
+            list-style: none;
+        }
+        .clearfix:after{
+            content:"";
+            display:block;
+            clear:both;
+        }
+        .container{
+            width: 100%;
+            max-width: 750px;
+            min-width: 320px;
+            position: relative;
+            margin:0 auto;
+            margin-bottom: 6rem;
+        }
+        .header .date{
+            font-size: 1.8rem;
+            width: 750px;
+            height: 94px;
+            line-height: 94px;
+            padding-left: 20px;
+            background-color: #fff;
+        }
+        .prompt{
+            height: 95px;
+            padding:30px 0;
+        }
+        .prompt ul li{
+            height: 35px;
+            line-height: 35px;
+            display: inline-block;
+            margin-left: 30px;
+        }
+        .prompt li span{
+            float: left;
+            font-size: 1.8em;
+            color: #fff;
+            margin-left: 10px;
+        }
+        .prompt li span[class^="color-type"]{
+            width: 45px;
+            height: 35px;
+            background-color: #fff;
+
+        }
+        .prompt li .color-type2{
+            background-color: #fe3f55 !important;
+        }
+        .prompt li .color-type3{
+            background-color: #0099ff !important;
+        }
+        .header .img{
+            text-align: center;
+            border-top: 1px solid #555555;
+        }
+        .content{
+            padding:50px 30px 0;
+        }
+        .content-list{
+            margin-top:30px;
+        }
+        .content-list li{
+            display: inline-block;
+            width: 45px;
+            height: 35px;
+            background-color: #0099ff;
+            margin-left: 10px;
+        }
+        .content-list .empty{
+            background-color:#fff !important;
+        }
+        .content-list .selected{
+            background-color:#fe3f55 !important;
+        }
+        .content-list li:nth-child(6){
+            margin-left: 7.8rem;
+        }
+        .footer{
+            margin-top:30px;
+            border-top:1px solid #555555;
+            font-size: 1.8rem;
+            padding:45px 30px;
+            color: #fff;
+            text-align: left;
+        }
+        .footer p span{
+            float: right;
+        }
+        .bottom{
+            width: 100%;
+            position: fixed;
+            bottom: 0;
+        }
+        .bottom > div{
+            height: 6rem;
+            line-height: 6rem;
+            float: left;
+            font-size: 1.8rem;
+        }
+        .bottom .b-left{
+            padding-left: 45px;
+            width: 27rem;
+            color: #b1b1b1;
+            background-color: #4a4c52;
+        }
+        .bottom .b-left .money{
+            color: #cc3300;
+        }
+        .bottom .b-left .sum{
+            font-size: 1rem;
+            margin-left: 20px;
+        }
+        .bottom .b-right{
+            text-align: center;
+            color: #333;
+            width: 15rem;
+            background-color: #c1a55f;
+        }
+        .s-bar ul li{
+            display: inline-block;
+            height: 3.5rem;
+            line-height: 3.5rem;
+            text-align: center;
+            width: 8rem;
+            color:#cfa972;
+            font-size: 1.8rem;
+            border:1px solid #cfa972;
+            margin:0 0 30px 30px;
+        }
+
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="header">
+        <div class="date">
+            <p>今天1月6日&nbsp13:20</p>
+        </div>
+        <div class="prompt">
+            <ul>
+                <li><span class="color-type1"></span><span class="text">可选</span></li>
+                <li><span class="color-type2"></span><span class="text">已选</span></li>
+                <li><span class="color-type3"></span><span class="text">已售</span></li>
+            </ul>
+        </div>
+        <div class="img">
+            <img src="11.png">
+        </div>
+    </div>
+    <div class="content" id="list-content">
+
+    </div>
+    <div class="footer">
+        <p>已选座位<span>最多可选择5个座位</span></p>
+    </div>
+    <div class="s-bar" id='js-s-bar'>
+
+    </div>
+    <div class="bottom">
+        <div class="b-left">
+            <span>合计：</span>
+            <span class="money" id="js-money">¥0</span>
+            <span class="sum" id="js-sum">¥99*0</span>
+        </div>
+        <div class="b-right">确认选座</div>
+    </div>
+</div>
+<!--<div class="box">-->
+    <!--<div class="time">-->
+        <!--<h1>今天1月6日 13:20</h1>-->
+    <!--</div>-->
+    <!--<div class="list">-->
+        <!--<ul>-->
+            <!--<li class="list1"><p>可选</p></li>-->
+            <!--<li class="list2"><p>已选</p></li>-->
+            <!--<li class="list3"><p>已售</p></li>-->
+        <!--</ul>-->
+    <!--</div>-->
+    <!--<div class="screen">-->
+        <!--<img src="11.png">-->
+    <!--</div>-->
+    <!--<div class="seat">-->
+        <!--<ul class="seat2">-->
+            <!--<li class="seat1"></li>-->
+            <!--<li class="seat1"></li>-->
+            <!--<li class="seat1"></li>-->
+            <!--<li class="seat1"></li>-->
+            <!--<li class="seat1"></li>-->
+            <!--<li class="seat1"></li>-->
+            <!--<li class="seat1"></li>-->
+            <!--<li class="seat1"></li>-->
+            <!--<li class="seat1"></li>-->
+            <!--<li class="seat1"></li>-->
+        <!--</ul>-->
+    <!--</div>-->
+    <!--<div class="tip">-->
+        <!--<div class="left">已选座位</div>-->
+        <!--<div class="right">最多可选择5个座位</div>-->
+    <!--</div>-->
+    <!--<div class="xs"></div>-->
+    <!--<div class="price">-->
+        <!--<div class="qr">确认选座</div>-->
+    <!--</div>-->
+<!--</div>-->
+<script>
+    var thisArr=[];
+
+    function initList() {   //添加座椅
+        var listHtml="";
+        for(var i=0;i<10;i++){
+            listHtml+="<ul class='content-list'>";
+            for(var j=0;j<10;j++){
+                if(Math.random()>0.5){
+                    listHtml += '<li class="empty" sign="'+(i+1)+'排'+(j+1)+'座"></li>';
+                }else {
+                    listHtml+='<li class="solid" sign="'+(i+1)+'排'+(j+1)+'座"></li>';
+                }
+            }
+           listHtml+="</ul>";
+        }
+        $("#list-content").html(listHtml);
+    }
+    $("#list-content").on("click","li",function () {   //添加选中状态
+        if($(this).attr("class")=="empty" && thisArr.length<5){
+            $(this).attr("class","selected");
+            thisArr.push($(this).attr("sign"));
+        }else if($(this).attr("class")=="selected"){//取消选中状态
+            $(this).attr("class","empty");
+           removeArr($(this).attr("sign"))
+        }
+        changeSelect()
+    });
+
+    function removeArr(arr) {    // 移除地下那个橙色的框
+        for(var i=0;i<thisArr.length;i++){
+            if(thisArr[i]==arr){
+                thisArr.splice(i,1);
+            }
+        }
+    }
+
+    function changeSelect() {
+            var thisHtml="<ul>";
+            for(var i=0;i<thisArr.length;i++){
+                thisHtml+="<li>"+thisArr[i]+"</li>"
+            }
+            thisHtml+="</ul>"
+            $("#js-s-bar").html(thisHtml);
+            $("#js-money").html("￥"+thisArr.length*99);
+            $("#js-sum").html("￥99*"+thisArr.length)
+        }
+    initList()
+
+
+
+
+</script>
+
+</body>
+</html>

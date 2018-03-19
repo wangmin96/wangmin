@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        img{
+            width: 600px;
+            height: 350px;
+        }
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        ul{
+            list-style-type: none;
+        }
+        .box1{
+            position: relative;
+            left: 50px;
+            width: 600px;
+            height: 350px;
+            border: 1px solid #bbbbbb;
+        }
+        .box1 .image{
+            position: relative;
+            width: 600px;
+            height: 350px;
+            overflow: hidden;
+        }
+        .box1 .image image{
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        .box1 .count{
+            position: absolute;
+            bottom: 5px;
+            right: 0;
+        }
+        .box1 .count li{
+            text-align: center;
+            color: #ffffff;
+            float: left;
+            overflow: hidden;
+            margin-right: 5px;
+            background: #ff6700;
+            border-radius: 20px;
+            width: 20px;
+            height: 20px;
+            line-height: 20px;
+            font-size: 14px;
+            opacity: 0.7;
+        }
+        .box1 .count li.active{
+            background: #ff4600;
+            opacity: 1;
+            color: #ffffff;
+        }
+        .box1 .arr-btn{
+            position: absolute;
+            left: 10px;
+            bottom: 0;
+            width: 60px;
+        }
+        .box2{
+            position: relative;
+            left: 50px;
+            width: 600px;
+            height: 350px;
+            border: 1px solid #bbbbbb;
+        }
+        .box2 .image{
+            position: relative;
+            width: 600px;
+            height: 350px;
+            overflow: hidden;
+        }
+        .box2 .image image{
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        .box2 .count{
+            position: absolute;
+            bottom: 5px;
+            right: 0;
+        }
+        .box2 .count li{
+            text-align: center;
+            color: #ffffff;
+            float: left;
+            overflow: hidden;
+            margin-right: 5px;
+            background: #ff6700;
+            border-radius: 20px;
+            width: 20px;
+            height: 20px;
+            line-height: 20px;
+            font-size: 14px;
+            opacity: 0.7;
+        }
+        .box2 .count li.active{
+            background: #ff4600;
+            opacity: 1;
+            color: #ffffff;
+        }
+        .box2 .arr-btn{
+            position: absolute;
+            left: 10px;
+            bottom: 0;
+            width: 60px;
+        }
+    </style>
+
+</head>
+<body>
+<div class="box1">
+    <div class="image">
+        <img src="image/0aff22b8667c7eea572108425737a27f.jpg">
+        <img src="image/1fcd5e256c36cc4540c1925bf28853ec.jpg">
+        <img src="image/3e9d96ae7349a448836922e8ad942d93.jpg">
+        <img src="image/67bb56dafd1299fb937ea428d73ccb9b.jpg">
+    </div>
+    <ul class="arr-btn count">
+        <li>&lt;</li>
+        <li>&gt;</li>
+    </ul>
+    <ul class="count">
+        <li class="active">1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+    </ul>
+</div>
+
+<script src="js%5D/require.js" data-main="js%5D/index"></script>
+
+</body>
+</html>

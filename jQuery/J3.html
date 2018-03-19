@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="jquery-3.3.1.js"></script>
+</head>
+<body>
+<div id="aa">
+    <input type="text" value="">
+    <button>确定</button>
+    <p>1</p>
+    <p class="aa">2</p>
+    <p class="aavvv">2</p>
+    <p>4</p>
+    <p>6</p>
+    <p></p>
+</div>
+<div>
+    <a href="">22222</a>
+</div>
+<script>
+  //  $("p:empty").html("123")//选取p标签中的空值，插入123
+   // $("div:has('p')").html("你好")//选中div里是否有P,有的话则用你好代替p的值
+  //  $("p:parent").html("你好")//看是否为父标签；
+   // $("p:visible").html("你好")//显示所有文档内被隐藏的；
+   // $("p[class^='aa']").html("你好") //寻找含aa开头的然后代替里面的字
+   // $("p[nsmr~='aa']").html("你好")//~=寻找用空格间隔的标签
+    $("p[class*='aa']")
+    $("p:first-child").html("你好");//选中p标签的第一个；
+    $("p:first-of-type").html("你好");//不管第一个是啥，直接选中；
+    $("p:nth-child(1)").html("你好")//下标索引1开始
+    $("p:nth-child(2n-1)").html("你好")//基数、3n、4n都可以
+    $("p:nth-child(3)").toggleClass("ee")//先去匹配，你有的话删去，你没有的话加上
+
+
+
+
+</script>
+
+</body>
+</html>

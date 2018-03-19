@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="jquery-3.3.1.js"></script>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        textarea{
+            width: 300px;
+            height: 150px;
+
+        }
+
+
+    </style>
+</head>
+<body>
+<button id="animate">变大</button>
+<button id="animated">变小</button><br>
+<textarea id="box">在用户登陆的界面中，一般都需要用户名和密码才能登陆，
+    这时为了增强用户体验，最好能在当前输入框没有获取焦点时，提示输入信息，获取焦点之后，
+    提示信息消失，文本框显示的信息为用户输入的信息；同时在用户没有输入信息的情况下，
+    或者鼠标移开的情况下，在用户登陆的界面中，一般都需要用户名和密码才能登陆，
+    这时为了增强用户体验，最好能在当前输入框没有获取焦点时，提示输入信息，获取焦点之后，
+    提示信息消失，文本框显示的信息为用户输入的信息；同时在用户没有输入信息的情况下，
+    或者鼠标移开的情况下，</textarea>
+</body>
+<script>
+//$("#animate").click(function () {
+//    $("#box").animate({
+//       height:'+=100'
+//    },1000)
+//})
+//    $("#animated").click(function () {
+//        $("#box").animate({
+//            height:'-=100'
+//        },1000)
+//    })
+    $("#animate").click(function () {
+        $("#box").animate({
+            scrollHeight:'+=10'
+        },1000)
+    })
+
+</script>
+</html>

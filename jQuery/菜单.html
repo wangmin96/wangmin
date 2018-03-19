@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="jquery-3.3.1.js"></script>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        .clearfix:after{
+            content: "";
+            clear:both;
+            display: block;
+        }
+        .box{
+            width: 300px;
+            height: 200px;
+        }
+        ul li{
+            list-style-type: none;
+
+        }
+        p{
+            border-bottom: 1px solid #b0b0b0;
+            position: relative;
+            font-size: 20px;
+            text-align: center;
+            margin: 10px 0;
+        }
+        .one{
+           position: relative;
+        }
+        .content{
+            position: absolute;
+            width: 300px;
+            left: 300px;
+        }
+        .active{
+            display: none;
+        }
+
+
+    </style>
+</head>
+<body>
+<div class="box">
+    <ul>
+        <li class="one">
+            <p>菜单一</p>
+            <ul class="content active" >
+                <li>菜单一内容1</li>
+                <li>菜单一内容2</li>
+                <li>菜单一内容3</li>
+            </ul>
+        </li>
+        <li class="two">
+            <p>菜单二</p>
+            <ul class="content">
+                <li>菜单二内容1</li>
+                <li>菜单二内容2</li>
+                <li>菜单二内容3</li>
+            </ul>
+        </li>
+        <li class="three">
+            <p>菜单三</p>
+            <ul class="content">
+                <li>菜单三内容1</li>
+                <li>菜单三内容2</li>
+                <li>菜单三内容3</li>
+            </ul>
+        </li>
+        <li class="four">
+            <p>菜单四</p>
+            <ul class="content">
+                <li>菜单四内容1</li>
+                <li>菜单四内容2</li>
+                <li>菜单四内容3</li>
+            </ul>
+        </li>
+        <li class="five">
+            <p>菜单五</p>
+            <ul class="content">
+                <li>菜单五内容1</li>
+                <li>菜单五内容1</li>
+                <li>菜单五内容1</li>
+            </ul>
+        </li>
+        <li class="six">
+            <p>菜单六</p>
+            <ul class="content">
+                <li>菜单六内容1</li>
+                <li>菜单六内容2</li>
+                <li>菜单六内容3</li>
+            </ul>
+        </li>
+    </ul>
+</div>
+<script>
+    $("p").mouseover(function () {
+        $(this).addClass("active").siblings().removeClass("active");
+    })
+</script>
+
+</body>
+</html>

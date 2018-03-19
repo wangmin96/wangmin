@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <!--<script>-->
+        <!--var oBox=document.getElementById("box");-->
+        <!--console.log("oBox");-->
+    <!--</script>-->
+</head>
+<body onload="">
+<div id="box">1</div>
+<span class="aa">11</span>
+<a href="">22</a>
+<img src="图片/1fcd5e256c36cc4540c1925bf28853ec.jpg">
+<script>
+
+
+
+  //  var aa=document.querySelector("#box");
+  var aSpan=document.getElementsByTagName("span")[0];
+ // var span2=aSpan.nextElementSibling;//获取兄弟结点//兼容性
+  var span2=next(aSpan);
+  function next(obj) {
+      var nextNode=obj;
+      do{
+          nextNode=nextNode.nextSibling;
+      }
+      while (nextNode && nextNode.nodeType!=1){
+      }
+      return nextNode;
+  console.log(span2);
+
+
+
+
+
+
+
+//    console.log(span2.nodeType);
+    //node.type
+
+  }
+
+
+//    var all=document.getElementsByTagName("*");
+//    //console.log(all);
+//
+//
+//
+// var classaa=getClassName("aa");
+//    function getClassName(className) {
+//       if(document.getElementsByClassName("")){
+//           return document.getElementsByClassName(className);
+//       }else{
+//           var all = document.getElementsByTagName("*");
+//           var thisArr=[];
+//           for (var i = 0; i < all.length; i++) {
+//               if (all[i].className == className) {
+//                   thisArr.push(all[i]);
+//               }
+//           }
+//           return thisArr
+//       }
+//    }
+//    console.log(classaa);
+
+</script>
+</body>
+</html>

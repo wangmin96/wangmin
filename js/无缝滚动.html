@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        ul li{
+            list-style-type: none;
+        }
+        .box{
+            height: 100px;
+            width: 430px;
+            border: 1px solid #bbbbbb;
+            margin: 100px auto;
+            padding:10px 0;
+            position: relative;
+            overflow: hidden;
+
+        }
+        ul{
+            width: 2000px;
+            position: absolute;
+            left: -550px;
+        }
+        .num li{
+            width: 100px;
+            height: 100px;
+            line-height: 100px;
+            background-color: #000000;
+            float: left;
+            margin-right: 10px;
+            text-align: center;
+            color: #ffffff;
+        }
+        .btn{
+            width: 200px;
+            margin: 0 auto;
+        }
+        .btn button{
+            text-align: center;
+            padding: 20px;
+            font-size: 25px;
+
+        }
+    </style>
+</head>
+<body>
+<div class="box">
+    <ul class="num">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+    </ul>
+</div >
+
+<div class="btn">
+    <button id="prev">向左</button>
+    <button id="next">向右</button>
+</div>
+<script>
+    var aNum=document.getElementsByTagName("ul")[0];
+    var oPrev=document.getElementById("prev");
+    var oNext=document.getElementById("next");
+    var isRun=true;
+    var timer;
+    oPrev.onclick=function () {
+        clearInterval(timer);
+       timer=setInterval(function () {
+            if(isRun){
+                aNum.style.left=aNum.offsetLeft-10+"px";
+                if(aNum.offsetLeft==-660){
+                    aNum.style.left="-110px";
+                }
+            }
+        },50)
+    }
+    oNext.onclick=function () {
+         clearInterval(timer);
+       timer=setInterval(function () {
+            if(isRun){
+                aNum.style.left=aNum.offsetLeft+10+"px";
+                if(aNum.offsetLeft==0){
+                    aNum.style.left="-550px";
+                }
+            }
+        },50)
+    }
+
+
+
+
+</script>
+
+</body>
+</html>0

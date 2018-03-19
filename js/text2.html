@@ -5,28 +5,64 @@
     <title>Title</title>
 </head>
 <body>
+<div class="test"></div>
+<button onclick="goBack"></button>
 <script>
-    var a="2";
-    if( a == 2){
-        console.log("yes");
-    }else {
-        console.log("no")
+//    var a="2";
+//    if( a == 2){
+//        console.log("yes");
+//    }else {
+//        console.log("no")
+//    }
+//    switch (2){
+//        case 1:
+//            console.log("1");
+//            break;
+//        case 2:
+//            console.log("2");
+//            break;
+//        case  3:
+//            console.log("3");
+//            break;
+//        default:
+//            console.log("a");
+//
+//
+//    }
+//    function goTop() {
+//        window.scrollTo(0,100);
+//        window.open(www.baidu.com);
+//    }
+//    var i=0;
+//    setTimeout(function () {
+//        alert("1");
+//    },1000);
+//
+//     var i =0;
+//    setInterval(function () {
+//        console.log(i);
+//        i++;
+//    },1000);
+//    clearInterval(st);
+//
+//    //clearTimeout()
+//    var st=setInterval(function () {
+//        console.log(i);
+//        i++;
+//    },1000);
+//    clearInterval(st);
+
+//    setTimeout("console.log('0')",0);
+//    console.log("1");
+    function goBack() {
+        window.history.go(-1);
+
     }
-    switch (2){
-        case 1:
-            console.log("1");
-            break;
-        case 2:
-            console.log("2");
-            break;
-        case  3:
-            console.log("3");
-            break;
-        default:
-            console.log("a");
+    window.location.reload()
 
 
-    }
+
+
 </script>
 
 </body>

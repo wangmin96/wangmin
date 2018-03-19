@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        ul li{
+            list-style-type: none;
+            text-align: center;
+
+        }
+        #box{
+            width: 200px;
+            border: 1px solid #333333;
+            margin :0 auto;
+        }
+        .title-1{
+            width: 200px;
+            height: 40px;
+            background-color: #333333;
+            color: #bbbbbb;
+            text-align: center;
+            line-height: 40px;
+            margin: 0 auto;
+
+
+        }
+        .text{
+            text-align: center;
+            display: none;
+
+        }
+    </style>
+</head>
+<body>
+<div id="box">
+    <ul>
+        <li>
+            <div class="title-1">管理层</div>
+            <ul class="text">
+                <li>01</li>
+                <li>02</li>
+                <li>03</li>
+            </ul>
+        </li>
+        <li>
+            <div class="title-1">交流层</div>
+            <ul class="text">
+                <li>01</li>
+                <li>02</li>
+                <li>03</li>
+            </ul>
+        </li>
+    </ul>
+</div>
+<script>
+var oBox = document.getElementById("box");
+var aDiv = oBox.getElementsByTagName("div");
+
+//for(var i=0;i<aDiv.length;i++){
+//    aDiv[i].onclick = function (e) {
+//        console.log(e);
+//        var thisNext =  next(this);
+//        if(thisNext.style.display == "none"){
+//            thisNext.style.display="block";
+//        }else{
+//            thisNext.style.display="none";
+//        }
+//
+//    }
+//}
+//    var oBox=document.getElementById("box");
+//    var aDiv=oBox.getElementsByTagName("div");
+
+    for(var i=0;i<aDiv.length;i++){
+        aDiv[i].onclick=function () {
+            var thisObj =  next(this);
+            if( thisObj.style.display == "none"){
+                thisObj.style.display="block";
+            }else {
+                thisObj.style.display="none";
+            }
+        }
+    }
+5
+
+//function next(obj) {
+//    var thisObj = obj;
+//    do{
+//        thisObj=thisObj.nextSibling;
+//    }while (thisObj && thisObj.nodeType!=1);
+//    return thisObj;
+//}
+
+    function next(obj) {
+        var thisNext=obj;
+        do{
+            thisNext=thisNext.nextSibling;
+        }while (thisNext && thisNext.nodeType!=1);
+      return thisNext ;
+    }
+
+
+
+
+
+
+</script>
+</body>
+</html>

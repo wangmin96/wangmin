@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        img{
+            display: block;
+        }
+        .small-img{
+            float: left;
+            position: relative;
+        }
+        .move-bar{
+            width: 100px;
+            height: 100px;
+            background-color: #757575;
+            opacity: 0.2;
+            float: left;
+            position:absolute;
+            left: 0;
+            top: 0;
+        }
+        .big-img {
+              float: left;
+            position: relative;
+            width: 200px;
+            height: 200px;
+            overflow: hidden;
+        }
+        .big-img img{
+            width: 400px;
+            height: 400px;
+            position: absolute;
+        }
+    </style>
+
+</head>
+<body>
+<div class="small-img">
+    <img src="图片/t014c9531add690543b.jpg">
+    <div class="move-bar"></div>
+</div>
+<div class="big-img">
+    <img src="图片/t014c9531add690543b.jpg">
+</div>
+<script>
+
+    var oBigBox = document.getElementsByClassName("big-img")[0];
+   var oBigImg = document.getElementsByClassName("big-img")[0].getElementsByTagName("img")[0];
+    var oMove = document.getElementsByClassName("move-bar")[0];
+    var oSmallImg = document.getElementsByTagName("div")[0];
+
+
+//
+//var oBigBox = document.getElementsByClassName("big-img")[0];
+//var oBigImg = document.getElementsByClassName("big-img")[0].getElementsByTagName("img")[0];
+//var oMove = document.getElementsByClassName("move-bar")[0];
+//var oSmallImg = document.getElementsByClassName("small-img")[0];
+    oSmallImg.onmouseover = function () {
+        oMove.style.display="block";
+        oBigBox.style.display = "block";
+    };
+    oSmallImg.onmouseout = function () {
+        oMove.style.display = "none";
+        oBigBox.style.display = "none";
+    }
+    oSmallImg.onmousemove = function (e) {
+        var top = e.clientY - oMove.offsetWidth/2;
+        var left = e.clientX - oMove.offsetHeight/2;
+        if(top<0){
+            top = 0;
+        }
+        if(left<0){
+            left = 0;
+        }
+
+        var maxTop = oSmallImg.offsetHeight - oMove.offsetHeight;
+        var maxLeft = oSmallImg.offsetWidth - oMove.offsetWidth;
+
+        if(top>maxTop){
+            top = maxTop;
+        }
+        if(left>maxLeft){
+            left = maxLeft;
+        }
+        oMove.style.left = left+"px";
+        oMove.style.top = top + "px";
+        oBigImg.style.left =-left*2+"px";
+        oBigImg.style.top = -top*2+"px";
+
+    }
+
+</script>
+
+</body>
+</html>

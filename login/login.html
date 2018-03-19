@@ -25,11 +25,11 @@
                    <a href="">扫码登录</a>
                </div>
                <div class="login-content">
-                   <div class="login-input">
-                       <input type="text" placeholder="邮箱/手机号/小米ID"><br>
-                       <input type="text" placeholder="密码">
+                   <div class="login-input" id="input1">
+                       <input type="text" placeholder="邮箱/手机号/小米ID" value=""><br>
+                       <input type="text" placeholder="密码" value="">
                    </div>
-                   <div class="login-btn">
+                   <div class="login-btn" id="login">
                        <input type="submit" value="登录">
                    </div>
                    <div class="small-text">
@@ -67,5 +67,24 @@
            </div>
        </div>
    </div>
+<script>
+    var oDiv=document.querySelector("#input1");
+    var oInput=oDiv.querySelectorAll("input");
+    var oDiv1=document.querySelector("#login");
+    var oLogin=oDiv1.getElementsByTagName("input")[0];
+
+    sessionStorage.name="xiaohong";
+    sessionStorage.password="123456789";
+    oLogin.onclick=function () {
+        if(oInput[0].value==sessionStorage.name&&oInput[1].value==sessionStorage.password){
+            location.href="http://www.xiaomi.com";
+        }
+        else {
+            alert("您输入的用户名或密码错误")
+        }
+    };
+
+
+</script>
 </body>
 </html>

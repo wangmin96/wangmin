@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="jquery-3.3.1.js"></script>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        select{
+            width: 100px;
+            height: 150px;
+        }
+        #opt{
+            position: absolute;
+            top: 0;
+            left: 180px;
+        }
+        .btn1{
+            position: absolute;
+            top: 150px;
+            left: 180px;
+        }
+        .btn2{
+            position: absolute;
+            top: 172px;
+            left: 180px;
+        }
+    </style>
+</head>
+<body>
+<select multiple="multiple" id="opt1">
+    <option>选项1</option>
+    <option>选项2</option>
+    <option>选项3</option>
+    <option>选项4</option>
+    <option>选项5</option>
+    <option>选项6</option>
+    <option>选项7</option>
+    <option>选项8</option>
+</select><br>
+<button id="right">选中添加到右边>></button><br>
+<button id="allright">全部添加到右边>></button><br>
+
+
+<select multiple="multiple" id="opt">
+
+</select><br>
+<button class="btn1">选中添加到左边>></button><br>
+<button class="btn2">全部添加到左边>></button><br>
+<script>
+    $("#right").click(function () {
+        $("option:selected").appendTo("#opt")
+    })
+    $("#allright").click(function () {
+        $("option").appendTo("#opt")
+    })
+    $(".btn1").click(function () {
+        $("option:selected").appendTo("#opt1");
+    })
+    $(".btn2").click(function () {
+        $("option").appendTo("#opt1");
+    })
+
+    $("#opt1").dblclick(function () {
+        $("option:selected").appendTo("#opt")
+    })
+    $("#opt").dblclick(function () {
+        $("option:selected").appendTo("#opt1")
+    })
+
+
+</script>
+</body>
+</html>

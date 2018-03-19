@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="jquery-3.3.1.js"></script>
+</head>
+<body>
+<div class="div1" text-type="aaa">内容</div>
+<input type="checkbox" id="cb">
+<p class="aa">1</p>
+<p>2</p>
+<p>3</p>
+<p>4</p>
+<p>5</p>
+<p>6</p>
+<script>
+//    var $attr=$("#cb").attr("checked");
+//    var $prop=$("#cb").prop("checked");
+//
+//    console.log("attr"+$attr);
+//    console.log("prop"+$prop);
+//    $("#cb").click(function () {
+//        var $attr=$(this).attr("checked");
+//        var prop=$(this).prop("checked");
+//        console.log()
+//    })
+
+
+//   $("#cb").prop("check",true);
+//   $("#cb").click(function () {
+//
+//   })
+
+var person={
+    name:"xiaohong",
+    age:"18",
+    school:"heida"
+}
+person.forEach(function (index,elem) {  })
+    $(person).each(function (index,elem) {
+    console.log(index);
+    console.log(elem)
+
+})
+
+//var b=$("#aa").get(0);  将jQuery转变为原生对象
+    $("p:gt(2)").css("color","red");//下标元素之后
+    $("p:last").css("color","red");
+    $("p:not('.aa')").css("color","red");
+    $("p:odd").css("color","red");
+    $("p:contains('4')").css("color","red");//整个标签都变；
+
+</script>
+</body>
+</html>

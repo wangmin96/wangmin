@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="jquery-3.3.1.js"></script>
+    <style>
+
+        ul li{
+            list-style-type: none;
+        }
+    </style>
+</head>
+<body>
+<div id="box">
+    <input type="text" value="" id="vals">
+    <button>确定</button>
+    <ul>
+        <li>bbb</li>
+        <li>aaa</li>
+        <li>ccc</li>
+        <li>ddd</li>
+        <li>eee</li>
+        <li>fff</li>
+        <li>ccc</li>
+    </ul>
+</div>
+<script>
+    $("button").click(function () {
+        var thisVal=($("#vals").val());
+        $("li:contains("+thisVal+")").css("color","red");
+    })
+
+</script>
+
+</body>
+</html>

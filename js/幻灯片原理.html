@@ -1,0 +1,297 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+        body{
+            background-color: #665e57;
+        }
+
+        #box{
+            width: 600px;
+            height: 300px;
+            margin: 50px auto;
+            border: 8px solid #b0b0b0;
+            position: relative;
+            overflow: hidden;
+        }
+        img {
+            width: 600px;
+            height: 300px;
+            float: left;
+        }
+
+        ul{
+            width: 4000px;
+            list-style-type: none;
+            position: absolute;
+        }
+        #box .count li{
+            color:#fff;
+            float:left;
+            width:20px;
+            height:20px;
+            cursor:pointer;
+            margin-right:5px;
+            overflow:hidden;
+            background:#FF9900;
+            text-align: center;
+            line-height: 20px;
+            opacity:0.7;
+            border-radius:20px;
+        }
+        .arr-btn {
+            position: absolute;
+            bottom: 10px;
+            left: 20px;
+
+        }
+
+
+        #num-bar{
+            bottom: 10px;
+            left: 450px;
+            position: absolute;
+        }
+        #box .count li.active{
+            opacity: 0.7;
+            background-color: #ff4600;
+            color: #ffffff;
+        }
+
+    </style>
+</head>
+<body>
+<div id="box" >
+    <ul class="list" id="slider-list">
+        <li><img src="图片/0aff22b8667c7eea572108425737a27f.jpg"></li>
+        <li><img src="图片/659059871c9c948f90b1a4980582b97a.jpg"></li>
+        <li><img src="图片/67bb56dafd1299fb937ea428d73ccb9b.jpg"></li>
+        <li><img src="图片/3e9d96ae7349a448836922e8ad942d93.jpg"></li>
+        <li><img src="图片/1fcd5e256c36cc4540c1925bf28853ec.jpg"></li>
+        <li><img src="图片/0aff22b8667c7eea572108425737a27f.jpg"></li>
+    </ul>
+    <ul class="count" id="num-bar">
+        <li class="active">1</li>
+        <li class="">2</li>
+        <li class="">3</li>
+        <li class="">4</li>
+        <li class="">5</li>
+    </ul>
+    <ul class="arr-btn count" id="left-btn">
+    <li this-type="prev">&lt;</li>
+    <li this-type="next">&gt;</li>
+</ul>
+</div>
+<script>
+    var oBox = document.getElementById("box");
+    var aLi = document.getElementsByClassName("count")[0].getElementsByTagName("li");
+    var oImg = document.getElementsByClassName("list")[0];
+    var aBtn = document.getElementsByClassName("count")[1].getElementsByTagName("li");
+    var globalIndex = 0;
+    var dirction = 10;
+    var isRun = true;
+    var isTimer = true;
+
+    oImg.style.width = oImg.offsetWidth + 600 +"px";
+    function changeImg(index) {
+        isRun = false;
+
+        if(index>globalIndex){
+            dirction = 10;
+        }else{
+            dirction = -10;
+        }
+        globalIndex = index;
+
+        if(index == -1){
+            oImg.style.left = -(oImg.offsetWidth -600)+"px";
+            globalIndex = 4;
+            index = 4;
+        }
+        if(index == 5){
+            globalIndex = 0;
+        }
+
+        for(var j=0;j<aLi.length;j++){
+            aLi[j].className="";
+        }
+        aLi[globalIndex].className = "active";
+        var timer = setInterval(function () {
+            console.log(oImg.offsetLeft+"+"+-index*600);
+            if(oImg.offsetLeft==-index*600){
+                clearInterval(timer);
+                isRun = true;
+                globalIndex = index;
+                if(index==5){
+                    oImg.style.left = 0;
+                    globalIndex = 0
+                }
+            }else{
+                oImg.style.left = oImg.offsetLeft - dirction+"px";
+            }
+        },10);
+    }
+
+
+    for (var i=0;i<aLi.length;i++){
+        aLi[i].index = i;
+        aLi[i].onmouseover=function () {
+            if(isRun){
+                changeImg(this.index);
+            }
+        }
+    }
+
+
+    aBtn[0].onclick = function () {
+        if(isRun){
+            changeImg(globalIndex-1);
+        }
+
+    };
+    aBtn[1].onclick = function () {
+        if(isRun){
+            changeImg(globalIndex+1);
+        }
+    };
+    setInterval(function () {
+        if(isRun && isTimer){
+            changeImg(globalIndex+1);
+        }
+    },1000);
+
+    oBox.onmouseover= function () {
+        isTimer = false;
+    }
+    oBox.onmouseout = function () {
+        isTimer = true;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+    //    var globalIndex=0;
+//    var dirction=0;
+//    var isRun=true;
+//    var isTimer=true;
+//
+//    function changeImg(index) {
+//        if(index>globalIndex){
+//            dirction=10;
+//        }else {
+//            dirction=-10;
+//        }
+//        if(index==5){
+//            globalIndex=index;
+//
+//            if(index==-1){
+//                oImg.style.left=oImg.offsetLeft-600+"px";
+//            }
+//            if(index==0){
+//                globalIndex=0;
+//            }
+//        }
+//        for (var j=0;j<aLi.length;j++){
+//            aLi[globalIndex].className="";
+//        }
+//        aLi[index].className="active";
+//        var timer=setInterval(function () {
+//            if(oImg.offsetLeft== -index*600){
+//                clearInterval(timer);
+//                globalIndex=index;
+//                if(index==5){
+//                    oImg.style.left=0;
+//                }
+//            }else {
+//                oImg.style.left=oImg.offsetLeft-dirction+"px";
+//            }
+//        },10);
+//    }
+//
+//
+//
+//    for(var i=0;i<aLi.length;i++){
+//        aLi[i].index=i;
+//        aLi[i].onmouseover=function () {
+//            changeImg(this.index);
+//            globalIndex=this.index;
+//        }
+//    }
+//aBtn[0].onclick=function () {
+//        if(isRun){
+//            changeImg(globalIndex-1);
+//        }
+//
+//}
+//aBtn[1].onclick=function () {
+//        if(isRun){
+//            changeImg(globalIndex+1);
+//        }
+//
+//}
+//
+//setInterval(function () {
+//    if(isRun && isTimer){
+//        changeImg(globalIndex+1);
+//    }
+//},1000);
+//    obox.onmouseover=function () {
+//        isTimer=false;
+//    }
+//obox.onmouseout=function () {
+//    isTimer=true;
+//}
+
+
+
+
+//    var aUl = document.getElementsByTagName("ul");
+//    var aNum = aUl[2].getElementsByTagName("li");
+//    var aBtn = aUl[1].getElementsByTagName("li");
+//    var aImg=aUl[0].getElementsByTagName("li");
+//    var globalIndex=0;
+//    function changeImg(index) {
+//
+//        for(var j=0;j<aNum.length;j++){
+//            aBtn[j].className=" ";
+//            aImg[j].style.display="none";
+//        }
+//        aBtn[index].className="active";
+//        aImg[index].style.display="block";
+//    }
+//
+//
+//    for(var i=0;i<aNum.length;i++) {
+//        aNum[i].index = i;
+//        aNum[i].onmouseover = function () {
+//            globalIndex=this.index;
+//            changeImg(globalIndex);
+//        }
+//    }
+//    for(var k=0;k<aBtn.length;k++){
+//        aBtn[k].onclick=function () {
+//            var thisType=this.attribute("this-type")
+//        }
+//    }
+
+</script>
+</body>
+</html>

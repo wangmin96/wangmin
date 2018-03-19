@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        ul {
+            list-style-type: none;
+            border: 1px solid #665e57;
+            width: 130px;
+            text-align: center;
+            display: none;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        ul li{
+            border-bottom: 1px solid #665e57;
+            padding: 3px 10px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<ul id="ul-menu" class="ul-cn">
+    <li class="=all" links="www.baidu.com">设置待办</li>
+    <li>设置已读</li>
+    <li>设置未读</li>
+    <li>删除邮筒</li>
+</ul>
+<script>
+     var oUL = document.getElementById("ul-menu");
+   var aLI = document.getElementsByTagName("li");
+//   var aULCn = document.getElementsByClassName("ul-cn");
+//   console.log(oUL);
+//   console.log(aUL); //aUL[0].innerhtml
+//   console.log(aULCn);
+
+//    document.onclick=function () {
+//        alert("1")
+//    }
+
+
+//    document.oncontextmenu =function () {  //右键
+//        alert("1");
+//    }
+//事件三要素：事件源 事件处理函数 事件对象
+    document.oncontextmenu =function (e) {
+        e=e ||window.event;
+
+        oUL.style.display="block";
+//        console.log(e.clientX);
+        oUL.style.top=e.clientY+"px";
+        oUL.style.left=e.clientX+"px";
+
+        return false;
+    }
+
+    document.onclick=function () {
+        oUL.style.display="none";
+    }
+//    aLI.onclick=function () {
+     //        alert("1");
+     //    }
+//    aLI[0].onclick=function () {
+//        alert("1");
+//    }
+    for(var i=0;i<aLI.length;i++){
+        aLI[i].onclick=function () {
+            location.href="http://www.baidu.com";
+            var thistext=this.innerHTML;
+//            console.log(thistext);
+            alert(thistext);
+            //取属性
+            //          location.href="http://"+thisLink;
+ //获取当前标签的属性           var thisLink=this.getAttributeNode("Links")
+
+        }
+    }
+
+
+</script>
+
+
+</body>
+</html>
