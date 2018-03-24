@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            padding:0;
+            margin: 0;
+        }
+        .div2 ,.div3 ,.div4{
+            color: #dddddd;
+            width: 100%;
+            height: 90px;
+            max-width: 960px;
+            background: #aaaaaa;
+            margin: 5px auto ;
+            font-size: 35px;
+            line-height: 90px;
+            text-align: center;
+        }
+
+        .content{
+            width: 100%;
+            max-width: 960px;
+            margin: 0 auto;
+        }
+        .content img{
+            width: 100%;
+            max-width:960px;
+        }
+        .word{
+            height: 350px;
+            width: 100%;
+            max-width: 960px;
+            margin: 0 auto;
+            position: relative;
+        }
+        p{
+            display: table-cell;
+            vertical-align: middle;
+            height: 100%;
+        }
+        .content-right{
+            position: absolute ;
+            top: 0;
+            right: 0;
+            width: 250px;
+            height: 350px;
+            background-color: gold;
+        }
+        .content-left{
+            margin-top: 5px;
+            width: 680px;
+            height: 350px;
+            background-color: lawngreen;
+        }
+        @media (max-width: 600px) {
+            .word p{
+                width: 100%;
+                margin: 10px 10px 0 0;
+            }
+        }
+
+
+    </style>
+</head>
+<body>
+<div class="div1">
+    <div class="div2">页眉</div>
+    <div class="div3">内容</div>
+    <div class="content">
+        <img src="1.jpg">
+    </div>
+    <div class="word">
+        <div class="content-left"><p>Though people have been always educated to save water, we can see they waste water all the time. For example, sometimes I can see children wash their hands for a long time and when they go away, they always forget to close the faucet. The most common situation I see is in the public toilet that people just walk away after using faucet and they don’t meant to close it. </p></div>
+        <div class="content-right"><p>They are wasting water and they should be condemned. Water conservation is in need because in most part of the world, people don’t have enough water and we need water to keep alive. On March 22nd , which is a day to call for the public to save water, if not, we will face the emergent situation. So it is everybody’s duty not to waste water.</p></div>
+    </div>
+    <div class="div4">页脚</div>
+</div>
+
+</body>
+</html>
