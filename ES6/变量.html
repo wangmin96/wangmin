@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<ul id="oUl">
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+    <li>5</li>
+</ul>
+<script>
+//    var a="0";
+//    var a="1";  //可以重复申明，如果先输出在申明就只能出现undifined
+//    console.log(a);
+
+//    var a ="10";
+//    console.log(a);
+//    function a() {
+//        console.log("2")
+//    }
+//    a="aaa";//a相当于一个字符串，不能当做一个函数来调用
+//    a();
+
+
+//    console.log(a);
+//    function a() {
+//        console.log("2")
+//    }//结果输出2
+
+
+//    var str="a";
+//    function foo() {
+//        console.log(str);
+//        var str="b";//加入这个会变为undefined
+//    }
+//    foo();
+
+//    function foo() {
+//        var str="a";
+//        return str;
+//    }
+//   var oStr= foo();
+//    console.log(oStr);//一个简单的闭包
+
+
+//    var oUl=document.getElementById("oUl");
+//    var oLi=document.getElementsByTagName("li");
+//    var i;
+//    for(i=0;i<oLi.length;i++) {
+//        (function (key) {
+//            console.log(key);
+//            oLi[key].onclick=function () {
+//                console.log(key)  //闭包内部函数可以调用外部函数的变量，并且不可以释放
+//            }
+//        })(i)
+//    }
+
+//    function foo1() {
+//        var a = "123";
+//        function foo2() {
+//            function foo3() {
+//                console.log(a)
+//            }
+//            foo3()
+//        }
+//        foo2()
+//    }
+//    foo1()//子集可从父集获取变量，反之不可以
+
+
+//
+//    console.log(a);
+//    let a="2";
+
+//    function foo() {
+//        var a="12";
+//        console.log(a);
+//        let a="1";
+//    }
+//    foo()
+
+//    const a="3";
+//    a=5;
+//    console.log(a);
+
+    const obj={
+        name:"xiaoming",
+        age:"17"
+    }
+    obj.name="xiaohong";
+    console.log(obj)
+//如果不想让obj的值不改变则用f
+</script>
+</body>
+</html>
