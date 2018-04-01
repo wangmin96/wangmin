@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script src="../jQuery/jquery-3.3.1.js"></script>
+<script>
+
+//    function* foo() {
+//        yield console.log("1");
+//        yield console.log("11");
+//        return console.log("1")
+//    }
+//    let a =foo();
+//    a.next();
+//    a.next()
+
+    function runAjax() {
+        $.get(url,function (ref) {
+            console.log(ref);
+            a.next();
+        })
+    }
+    function* foo() {
+        yield runAjax('a.json');
+        yield runAjax('b.json');
+        return runAjax('c.json')
+    }
+    let a =foo();
+    a.next();
+</script>
+
+</body>
+</html>

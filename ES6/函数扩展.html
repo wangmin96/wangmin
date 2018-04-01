@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+//    function foo(pra1,pra2) {
+//        console.log(pra1,pra2)
+//    }
+//    foo("aaa","bbb")
+
+//    function foo(a,b,c) {
+//
+//    }
+//    console.log(foo.prototype)
+//    console.log(foo.length)//获取函数参数的个数。如果你写了默认参数，后面就不进入了，进行顺序遍历
+
+//    function foo(a,...arg) {
+//        console.log(a,arg)
+//    }
+//    foo(1,2,3,4,5)
+//    console.log(foo.length)//rest 剩余不计入到长度参数里
+
+//    "use strict"
+//    a=6;
+//    console.log(a);
+//    function foo(a) {
+//        console.log(this)
+//    }
+//    foo()
+//
+//    var obj={
+//        name:"xiaoming",
+//        age:"17"
+//    }
+//    var name="xiaohong";
+//    with(obj){
+//        console.log(name)
+//    }
+
+//    function foo(key) {
+//        if(key==1){
+//            return 1
+//        }else{
+//            arguments.callee(key -1);
+//            console.log(key);
+//        }
+//    }
+//    foo(10)
+
+//    let foo=(a,b)=>{console.log(a,b);}
+//    foo("1","2")
+
+//    let foo=(a,b)=>a+b;
+//    console.log(foo(1,3))
+
+//    let foo=(...a) =>{
+////        console.log(arguments)
+//        console.log(a)
+//    }
+//    foo(1,2)
+
+//    function Person() {
+//        this.name="aa";
+//    }
+//    var person = new Person();
+//    //console.log(person.name)
+//    console.log(person.__proto__)
+
+    let obj={
+        timer:function () {
+            setTimeout(()=>{//function () {
+                console.log(this)
+            },1000)
+        }
+    }
+    obj.timer()
+
+</script>
+
+</body>
+</html>
