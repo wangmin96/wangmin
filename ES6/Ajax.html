@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<ul id="music-List"></ul>
+<script>
+    let oUl=document.querySelector("#music-List");
+    //1.创建XMLHttpRequest对象
+    var xmlhttp;
+    if (window.XMLHttpRequest)
+    {// code for IE7+, Firefox, Chrome, Opera, Safari
+        xmlhttp=new XMLHttpRequest();
+    }
+    else
+    {// code for IE6, IE5
+        xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+    }
+    //2.向服务器端发送请求
+    xmlhttp.open("GET","musicdata.json",true);
+    xmlhttp.send();
+    //3.服务器响应
+    xmlhttp.onreadystatechange=function () {
+        if(xmlhttp.readyState==4 && xmlhttp.status == 200){
+            let json =JSON.parse(xmlhttp.responseText);
+            console.log(json);
+            let list=json.musicData;
+            console.log(list);
+            for( let item of list){
+                oUl.innerHTML += `<li>${item.title}</li>`
+            }
+        }
+    }
+</script>
+</body>
+</html>
