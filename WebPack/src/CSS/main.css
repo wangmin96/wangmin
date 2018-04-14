@@ -1,4 +1,17 @@
-div{
+h1{
     color: red;
     background-image: url("../images/img-22cde400f8245f9346e0e17cedabc0d7.jpg");
+    transform: rotate(30deg);
+    display:flex;
+    font-size:10px;
+    border:1px solid #ddd
+
+}
+.aaa{
+    color: red;
+}
+div{
+    
+    color: blue;
+    font-size: 23px;
 }

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+     .div1{
+         height: 400px;
+        
+
+     }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <div @click="click1">@click</div>
+        <div v-on:click="testClick(2,$event)">{{num}}</div>
+        <div class="div1" @click2>
+            <div class="div2">
+            </div>
+        </div>
+    </div>
+    <script src="vue.js"></script>
+    <script>
+        let vm=new Vue({
+            el:"#app",
+            data:{
+              num:0
+
+            },
+            methods:{
+                testClick(key){
+                    this.num += key ;
+
+                },
+                click1(){
+                    console.log(1);
+                },
+                click2(){
+
+                },
+                click3(e){
+                    console.log('div2');
+                    e.stopPropagation();
+
+                },
+                click4(e){
+                    
+                }
+            }
+        })
+    </script>
+</body>
+</html>
