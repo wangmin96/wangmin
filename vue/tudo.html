@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="bootstrap.min.css">
+
+</head>
+<style>
+    #search{
+        text-align: center;
+    }
+    #search input{
+        width: 200px;
+        height: 32px;
+    }
+    #search-bar{
+        text-align: center;
+    }
+    button{
+        background-color: #22aadd;
+    }
+</style>
+<body>
+<h2 style="text-align: center">todolist</h2><br><br>
+<div id="app">
+    <div id="search">
+        <input type="text" placeholder="请输入关键字">
+        <button type="button" class="btn btn-primary btn-sm">搜索</button><br><br><br>
+    </div>
+    <div id="search-bar">
+       商品名称 <input type="text" placeholder="请输入名称">
+       商品价格 <input type="text" placeholder="0">
+        <button type="button" class="btn btn-primary btn-sm">搜索</button>
+    </div>
+
+</div>
+<script src="vue.js"></script>
+<script>
+let vm =new Vue({
+    el:"app",
+    data:{
+        obj:[{
+            
+        }]
+
+    }
+})
+
+
+</script>
+
+</body>
+</html>

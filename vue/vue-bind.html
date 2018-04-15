@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    .aa{
+        color:red;
+    }
+</style>
+<body>
+<div id="app">
+    <img :src="imgSrc+'.png'" alt="">
+    <div :class="{active:isActive}">fellow 20</div>
+    <div style ="color: dcolor">hello world</div>
+</div>
+<script src="vue.js"></script>
+<script>
+    let vm= new Vue({
+        el:"#app",
+        data:{
+            imgSrc="logo",
+            aa:'active',
+            isActive:true,
+            dcolor:"blue"
+        },
+        computed: {
+            cisActive(){
+                if(this.isActive){
+                    return "active"
+                }else {
+                    return ""
+                }
+            }
+        }
+    })
+</script>
+</body>
+</html>
