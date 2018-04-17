@@ -8,13 +8,12 @@
     <style>
      .div1{
          height: 400px;
-        
-
      }
     </style>
 </head>
 <body>
     <div id="app">
+
         <div @click="click1">@click</div>
         <div v-on:click="testClick(2,$event)">{{num}}</div>
         <div class="div1" @click2>
@@ -33,7 +32,6 @@
             methods:{
                 testClick(key){
                     this.num += key ;
-
                 },
                 click1(){
                     console.log(1);
