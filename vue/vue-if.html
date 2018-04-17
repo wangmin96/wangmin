@@ -7,21 +7,32 @@
     <title>Document</title>
 </head>
 <body>
-    <div id="app">
-        <div v-if="testif=='a'">a</div>
-        <div v-else-if="testif==b">b</div>
-        <div v-else>c</div>
-        <div v-show="false">v-show</div>
-    </div>
-    <script src="vue.js"></script>
-    <script>
-    let vm = new Vue({
-        el : "#app",
+<div id="app">
+    <span v-if="isLogin">{{msg}}</span>
+    <span v-else>请登录</span>
+    <span v-if="letter=='A'">A</span>
+    <span v-else-if="letter=='B'">B</span>
+    <span v-else>C</span>
+    <br>
+
+    <span v-show="isShow">show</span>
+    <span v-show="!isShow">Not show</span>
+
+
+</div>
+
+  <script src="vue.js"></script>
+<script>
+    let vm = new  Vue({
+        el:'#app',
         data:{
-            testif:"a"
+            isLogin:false,
+            msg:'欢迎：唯创网讯',
+            letter:'A',
+            isShow:'true'
 
         }
     })
-    </script>
+</script>
 </body>
 </html>

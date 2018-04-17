@@ -7,40 +7,56 @@
     <title>Document</title>
 </head>
 <body>
-    <div id="app">
-        <div v-for="val in obj">name:{{val.name}}age{{val.age}}school{{val.school}}</div>
-         <div v-for="var in arr2">{{val}}</div>
-    </div>
-    <script src="vue.js"></script>
-    <script>
-        let vm = new Vue({
-            el:"#app",
-            computed : {
-                // arr2(){
-                //    return this.arr.sort(function(a,b){
-                //        return b-a;
-                //    })
-                // }
-                
-            },
-            data:{
-                arr2:[4,5,6,8,9,1,2],
-                obj:[{
-                    name:"xiaoming",
-                    age:18,
-                    school:"heida"
-                },{
-                    name:"xiaohong",
-                    age:19,
-                    school:"heida"
-                },{
-                    name:"xiaogang",
-                    age:20,
-                    school:"heida"
-                }]
-            }
-        });
-    
-    </script>
+<div id="app">
+    <ul>
+        <li v-for="(schools,index) in school">{{schools}}--{{index+1}}</li>
+    </ul>
+    <ul>
+        <li v-for="(item,key,index) in obj">
+            <h3>{{item}}</h3>--{{key}}--{{index}}</li>
+    </ul>
+    <ul>
+        <li v-for="obj in arrSort">
+            <!--{{obj.name}}&#45;&#45;{{obj.age}}&#45;&#45;{{obj.company}}-->
+            <div v-for="(val,key) in obj">{{val}}--{{key}}</div>
+        </li>
+    </ul>
+</div>
+  <script src="vue.js"></script>
+  <script>
+      let vm=new Vue({
+          el:"#app",
+          data:{
+              school:['金融','农大','黑大','林大'],
+              obj:{
+                  name:'zs',
+                  age:18,
+                  company:'baidu'
+              },
+              arr:[{
+                  name:'zs',
+                  age:18,
+                  company:'baidu'
+              },{
+                  name:'lisi',
+                  age:28,
+                  company:'ali'
+              },{
+                  name:'ww',
+                  age:20,
+                  company:'tencent'
+              }]
+          },
+          computed:{    //计算属性
+              arrSort:function(){//不能与data重名
+                 return this.arr.sort(function (a,b) {
+                     return a.age-b.age;
+                 })
+              }
+
+          }
+      })
+
+  </script>
 </body>
 </html>
