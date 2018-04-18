@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #div1{
+            width: 400px;
+            height: 400px;
+            background: red;
+        }
+        #div2{
+            width: 200px;
+            height: 200px;
+            background: green;
+        }
+    </style>
+</head>
+<body>
+<div id="app">
+    <button v-on:click.once="clickhandler(2,$event)">btn</button> <!-- 简写将v-on写成@   2相当于实参-->
+    <h1>{{num}}</h1>
+
+    <button v-on="{ mouseover:doThis ,mouseup:doThat}">btn2</button>
+
+    <div id="div1" @click="clickDiv1">
+        <div id="div2" @click.stop="clickDiv2($event)"></div>
+    </div>
+    <a href="http://www.baidu.com" @click.prevent="baiduClick">百度</a>
+    <!--&lt;!&ndash;<form @submit.prevent></form> &ndash;&gt;也可以阻止默认行为-->
+
+    <input type="text" @keyup.enter="keyupHandler($event)">
+</div>
+<script src="vue.js"></script>
+<script>
+    let vm= new Vue({
+        el:'#app',
+        data:{
+            num:0
+        },
+        methods:{
+            clickhandler:function(n,e){
+                this.num +=n;   //相当于形参
+                console.log(e);
+            },
+            doThis:function(){
+                console.log("dothis")
+            },
+            doThat:function () {
+                console.log("dothat")
+            },
+            clickDiv1:function () {
+                console.log("div1");
+
+            },
+            clickDiv2:function (e) {
+                console.log("div2");
+                // e.stopPropagation()
+            },
+            baiduClick:function (e) {
+                // e.preventDefault();  //阻止默认行为
+                // return false;
+
+            },
+            keyupHandler:function (e) {
+                // if(e.keyCode==13){
+                //     console.log(123)
+                // }
+                console.log(123)
+            }
+
+
+        }
+    })
+</script>
+</body>
+</html>
