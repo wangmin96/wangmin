@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        table{
+            border-collapse: collapse;
+        }
+        table  td,table th{
+            border: 1px solid #dddddd;
+        }
+        table .active{
+            background: red;
+        }
+    </style>
+</head>
+<body>
+<div id="app">
+    <table >
+        <tr>
+            <th>选择</th>
+            <th>商品名称</th>
+            <th>商品价格</th>
+            <th>删除</th>
+        </tr>
+        <tr @click="select(val)" v-for="(val,index) in listArr" :class="{'active':val.isSelected}">
+            <td><input type="checkbox"></td>
+            <td>{{val.name}}</td>
+            <td>{{val.price}}</td>
+            <td><button>X</button></td>
+        </tr>
+        <tr>
+            <td><button>选中删除</button></td>
+            <td colspan="3">{{sum}}</td>
+        </tr>
+    </table>
+</div>
+<script src="vue.js"></script>
+<script>
+    let vm=new Vue({
+        el:'#app',
+        data:{
+            sum:0,
+            listArr:[
+                {
+                    isSelected:false,
+                    name:"衣服",
+                    price:"123"
+                },{
+                    isSelected:false,
+                    name:"鞋子",
+                   price:"223"
+                },{
+                    isSelected:false,
+                    name:"裤子",
+                    price:"423"
+                },{
+                    isSelected:false,
+                    name:"帽子",
+                    price:"13"
+                },{
+                    isSelected:false,
+                    name:"围巾",
+                    price:"23"
+                }
+            ]
+        },
+        methods:{
+            select(val){
+                isSelected=!val.isSelected;
+    }
+
+        }
+    })
+
+</script>
+</body>
+</html>
