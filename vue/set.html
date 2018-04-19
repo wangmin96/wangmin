@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    <button @click="change">change</button>
+    <button @click="destroy">destroy</button>
+    <div>{{arr}}</div>
+    <div>{{obj}}</div>
+    <div>{{sum}}</div>
+</div>
+<script src="vue.js"></script>
+<script>
+    new Vue({
+        el:'#app',
+        data:{
+            arr:[1,3,5,4,6,8,7],
+            obj:{
+                name:'xiaoming'
+            },
+            sum:0,
+            timer:""
+        },
+        methods:{
+            change(){
+                // this.arr[3]='aaa';
+                // this.obj.age="18"
+                Vue.set(this.arr,3,'aaa');
+                Vue.set(this.obj,"age","18");
+                timer=setInterval( ()=>  {
+                    this.sum++;
+                    console.log("11")
+                },1000)
+            },
+            destroy(){
+                clearInterval(this.timer);
+                this.$destroy();
+            }
+        },
+        beforeCreate(){
+            console.log('beforeCreate')
+
+        },
+        created(){
+            console.log('created')
+
+        },
+        beforeMount(){
+            console.log('beforeMount')
+
+        },
+        mounted(){
+            console.log('mounted')
+
+        },
+        beforeUpdate(){
+            console.log('beforeUpdate')
+
+        },
+        updated(){
+            console.log('updated')
+
+        },
+        beforeDestroy(){
+            console.log('beforeDestroy')
+
+        },
+        destroyed(){
+            console.log('destroyed')
+
+        }
+    })
+
+</script>
+</body>
+</html>
