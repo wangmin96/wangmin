@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    <testa :msg="aaa">
+        <span slot="slot1">{{bbb}}</span>
+    </testa>
+</div>
+<template id="tem1">
+
+       <!--<div>{{msg}}</div>-->
+       <div>
+           <div>{{msg}}</div>
+           <slot name="slot1"></slot>
+           <div>{{ccc}}</div>
+           <testb msg2="fellow20"></testb>
+       </div>
+</template>
+<template id="temp2">
+    <div>{{msg2}}</div>
+</template>
+<script src="vue.js"></script>
+<script>
+    Vue.component('testa',{
+        // template:`
+        // <div>{{msg}}</div>
+        // `,
+        //template:`#tem1`,
+        template:'#temp2',
+      //  props:['msg'],
+        props:['msg2'],
+        data(){
+            return {
+                ccc:"abc123"
+            }
+        }
+    });
+    Vue.component('testb',{
+        // template:`
+        // <div>{{msg}}</div>
+        // `,
+        template:`#tem2`,
+    })
+    new Vue({
+        el:'#app',
+        data:{
+            aaa:"abcdef",
+            bbb:'123456'
+
+        }
+    })
+</script>
+</body>
+</html>
