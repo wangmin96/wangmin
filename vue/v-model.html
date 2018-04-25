@@ -7,47 +7,68 @@
     <title>Document</title>
 </head>
 <body>
-    <div id="app">
-        <input type="text" v-model.lazy="msg">
-        <input type="text" v-model.lazy="msg">
-        <input type="radio" name="sex" value="男" v-model="sex">男
-        <input type="radio" name="sex" value="女" v-model="sex">女
-        <div>
-             <input type="checkbox" value="basketball" v-model="hobby">篮球
-             <input type="checkbox" value="football" v-model="hobby">足球
-             <input type="checkbox" value="volleball" v-model="hobby">排球
-        </div>
-        <div>
-            <select name="" id="" v-model="city">
-                <option value="beijing" >北京</option>
-                <option value="shanghai" > 上海</option>
-                <option value="guangzhou">广州</option>
-            </select>
-            <div>
-                <textarea v-model="text"></textarea>
-            </div>
-        </div>
-        <div>{{msg}}</div>
-    </div>
+<div id="app">
+
+    <form>
+        用户名： <input type="text"  v-model="username">
+        <h4>用户名是：{{username}}</h4>
+
+
+
+        用户名lazy： <input type="text"  v-model.lazy="username">
+        <h4>用户名是：{{username}}</h4>
+
+        用户名trim： <input type="text"  v-model.trim="username">
+        <h4>用户名是：{{username}}</h4>
+
+        年龄：<input type="text" v-model.number="age">
+        <!--<input type="number">-->
+        <h4>年龄是{{age}}</h4>
+
+
+
+        性别：
+        <input type="radio" v-model="sex" value="男1">男
+        <input type="radio" v-model="sex" value="女1">女
+        <h4>性别是：{{sex}}</h4>
+
+        <input type="checkbox" v-model="hobby" value="足球">足球
+        <input type="checkbox" v-model="hobby" value="篮球">篮球
+        <input type="checkbox" v-model="hobby" value="排球">排球
+        <h4>爱好是：{{hobby}}</h4>
+
+
+        学校:
+        <select v-model="school">
+            <option value="农大">农大</option>
+            <option value="黑大">黑大</option>
+            <option value="林大">林大</option>
+            <option value="金融">金融</option>
+
+        </select>
+        <h4>学校是{{school}}</h4>
+
+        自我介绍：
+        <textarea v-model="description"></textarea>
+        <h4>自我介绍是：{{description}}</h4>
+
+    </form>
+</div>
     <script src="vue.js"></script>
-    <script>
-        let vm = new Vue({
-            el:"#app",
-            data:{
-                msg:"",
-                sex:"",
-                hobby:[],
-                city:"",
-                text:""
+<script>
+    let vm = new Vue({
+        el:'#app',
+        data:{
+            username:"",
+            sex:'',
+            hobby:[],
+            school:'',
+            description:'',
+            age:''
 
-            },
-            methods:{
+        }
+    })
 
-            },
-            computed:{
-                
-            }
-        })
-    </script>
+</script>
 </body>
 </html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    <test></test>
+    <testa></testa>
+</div>
+<div id="app2">
+    <test></test>
+    <!--<testa></testa>-->   <!--局部主键与全局主键-->
+</div>
+<script src="vue.js"></script>
+<script>
+    Vue.component('test',{
+        template:`
+<div>
+<h1>1</h1>
+<h1>2</h1>
+<h1>3</h1>
+</div>`
+
+});
+     new Vue({
+        el:'#app',
+        data:{
+
+        },
+         components:{
+            testa:{
+                template:`
+                   <div>
+                   <h1>4</h1>
+                   <h1>5</h1>
+                   <h1>6</h1>
+                   </div>`
+            }
+         }
+    })
+    new Vue({
+        el:'#app2'
+    })
+</script>
+</body>
+</html>
