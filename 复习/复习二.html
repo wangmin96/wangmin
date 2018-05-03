@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+       li{
+           list-style: none;
+       }
+      #tab{
+          /*overflow: hidden;*/
+          height: 30px;
+          /*position: absolute;*/
+          border-bottom: 1px solid;
+
+      }
+      /*.clearfix ::after{*/
+          /*content: "";*/
+          /*display: block;*/
+          /*clear: both;*/
+
+      /*}*/
+        #container{
+            width: 400px;
+            height: 300px;
+            margin: 100px auto;
+            border: 1px solid ;
+            background-color: #dddddd;
+        }
+        #tab li{
+            width: 120px;
+            height: 30px;
+            background-color: #8c8c8c;
+            float: left;
+            margin-left: 5px;
+            text-align: center;
+            line-height: 30px;
+            cursor: pointer;
+        }
+        #tab .selected{
+            background-color: #1b1b1b;
+            color: #dddddd;
+        }
+         #content div{
+             display: none;
+         }
+        #content .selected{
+            display: block;
+        }
+    </style>
+</head>
+<body>
+<div id="container" >
+    <ul id="tab">
+        <li class="selected">html</li>
+        <li>css</li>
+        <li>javascript</li>
+    </ul>
+    <div id="content">
+        <div class="selected">111</div>
+        <div>222</div>
+        <div>333</div>
+    </div>
+</div>
+<script>
+    let oTab=document.getElementById("tab");
+    let aLi=oTab.getElementsByTagName("li");
+    let oContent=document.getElementById("content");
+    let aDiv=oContent.getElementsByTagName("div");
+    for(let i=0;i<aLi.length;i++){
+        aLi[i].index=i;
+        aLi[i].onclick = function () {
+            for (let i = 0; i < aLi.length; i++) {
+                aLi[i].className = " ";
+                aDiv[i].className = " ";
+            }
+            this.className = "selected";
+            aDiv[i].className = "selected";
+            console.log(i)
+
+        }
+    }
+
+</script>
+
+</body>
+</html>
