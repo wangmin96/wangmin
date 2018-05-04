@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        ul{
+            list-style: none;
+        }
+        #tab{
+            border: 1px solid #dddddd;
+            width: 120px;
+            cursor: pointer;
+            display: none;
+            position: absolute;
+            top:0;
+            left:0;
+        }
+        #tab li{
+            height: 30px;
+            line-height: 30px;
+            border-bottom: 1px dashed #dddddd;
+            text-align: center;
+        }
+        #tab li:hover{
+            background-color: #6c757d;
+        }
+    </style>
+</head>
+<body>
+<ul id="tab">
+    <li>刷新</li>
+    <li>后退</li>
+    <li>前进</li>
+    <li>排序方式</li>
+    <li>查看</li>
+    <li>新建</li>
+</ul>
+
+<script>
+    let oTab=document.getElementById("tab");
+    document.oncontextmenu=function (e) {
+        oTab.style.display="block";
+        oTab.style.top=e.clientY +"px";
+        oTab.style.left=e.clientX+"px";
+        return false
+    }
+    document.onclick=function () {
+        oTab.style.display="none"
+    }
+</script>
+
+</body>
+</html>
