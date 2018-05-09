@@ -8,18 +8,23 @@
             margin:0;
             padding: 0;
         }
+        body{
+            background: #5bc0de ;
+
+        }
+
         ul{
             list-style: none;
         }
-        img{
+        #imgs img{
             display: block;
-            width: 520px;
-            height: 280px;
+            width: 600px;
+            height: 300px;
         }
         #container{
-            width: 520px;
-            height: 280px;
-            margin: 150px auto;
+            width: 600px;
+            height: 300px;
+            margin: 30px 60px;
             position: relative;
         }
         #imgs img{
@@ -54,27 +59,86 @@
             left: 10px;
             bottom: 10px;
         }
+        .book{
+            position: absolute;
+            width: 400px;
+            height: 280px;
+            top: 60px;
+            right: 160px;
+            color: #bee5eb;
+        }
+        .box{
+            text-align: center;
+            width: 200px;
+            height: 260px;
+            border: 1px solid #bee5eb;
+            float: left;
+            margin-left: 100px;
+            margin-bottom: 20px;
+            color:#bee5eb ;
+        }
     </style>
 </head>
 <body>
+<div>
 <div id="container">
     <div id="imgs">
-        <img src="19bf0653e4b814a34efe55ae3da5da58.jpg" class="selected">
-        <img src="93bf5457f2c8f3a8edd0f5a12eb4069c.jpg">
-        <img src="9766dcdd36ebb94f13142def154a0495.jpeg">
-        <img src="cf7a958c1936c941e4d130ca7c1fa44f.jpg">
-        <img src="d0190c550ff9250e91cb1852bf337453%20-%20副本.jpg">
+        <img src="images/fpic8867.jpg" class="selected">
+        <img src="images/fpic9329.jpg">
+        <img src="images/max1705.jpg">
+        <img src="images/psd6733.jpg">
+        <img src="images/chahua1324.jpg">
     </div>
     <ul id="tab">
         <li class="selected">1</li>
         <li>2</li>
         <li>3</li>
         <li>4</li>
+        <li>5</li>
     </ul>
     <div id="rows">
         <span id="prev">&lt;</span>
         <span id="next">&gt;</span>
     </div>
+</div>
+    <div class="book">
+    <p>物业管理系统是现代居住小区不可缺少的一部分。一个好的物业管理系统可以提升小区的管理水平，使小区的日常管理更加方便。将计算机的强大功能与现代的管理思想相结合，建立现代的智能小区是物业管理发展的方向。重视现代化的管理，重视细致周到的服务是小区工作的宗旨。以提高物业管理的经济效益、管理水平，确保取得最大经济效益为目标。</p>
+    </div>
+    <div class="picture">
+        <div class="box">
+            <h3>人事管理子系统</h3>
+            <p>从员工的招聘、任用到员工的离职进行全面有效的管理，详细记录员工的个人资料、家庭成员、员工合同、岗位考核、在职培训、离职手续办理等资料。</p>
+        </div>
+        <div class="box">
+            <h3>房产信息管理</h3>
+            <p>记录管理区、大楼、楼层、房间及配套硬件设施的基本信息。主要模块：项目（小区、写字楼、别墅等）基本信息管理、楼宇基本信息管理、房间管理信息模块</p>
+        </div>
+        <div class="box">
+            <h3>客户信息管理</h3>
+            <p>实现对业主购房、出租、退房的全过程管理，可以随时查询住户历史情况和现状，加强对业主及住户的沟通和管理。包括业主信息管理、业主家庭成员、车辆信息、电话信息、宠物信息、报修欠费历史等信息。</p>
+        </div>
+        <div class="box">
+            <h3>收费管理</h3>
+            <p>物业收费管理信息系统是整个综合物业管理信息系统的日常业务管理模块，对物业管理公司的经营管理工作起到至关重要的作用。在收费管理中，系统将收费分为社区、大楼、楼层、房间等多个级别。主要功能模块：收费项目定义、合同管理、应收款管理、实收、欠费管理、收费情况统计查询</p>
+        </div>
+        <div class="box">
+            <h3>保安消防管理</h3>
+            <p>消防保安管理是企业正常运转的重要保证。本模块主要包括保安人员档案管理、保安人员定岗、轮班或换班管理、安防巡逻检查记录、治安情况记录以及来人来访、物品出入管理等功能。</p>
+        </div>
+        <div class="box">
+            <h3>保洁环卫管理</h3>
+            <p>环卫管理主要包括三个方面：绿化管理，保洁管理，联系单位。绿化管理即绿化安排及维护记录，保洁管理包括清洁用具管理、保洁安排及检查记录，联系单位即联系单位信息及联系记录。</p>
+        </div>
+        <div class="box">
+            <h3>采购库存管理</h3>
+            <p>物资管理信息系统为企业提供了一种管理库存的电子集成化方案，从采购、入库，到库内作业、出库、核算等。主要模块：采购计划管理、供货商管理、 物料档案管理、物资入库管理、物资出库管理、统计查询</p>
+        </div>
+        <div class="box">
+            <h3>合同管理</h3>
+            <p>合同类别与供应商信息管理，合同签订审批流程管理；合同归档、变更、终止、解除、续订管理；合同收付款计划管理，支持合同件扫描归档、查询。</p>
+        </div>
+    </div>
+
 </div>
 <script>
     let oTab=document.getElementById("tab");
