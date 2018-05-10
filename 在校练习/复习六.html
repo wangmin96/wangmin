@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #div1{
+            width: 200px;
+            height: 200px;
+            background-color:red;
+        }
+    </style>
+</head>
+<body>
+<button id="btn">增加宽度</button>
+<div id="div1"></div>
+<script>
+    let oDiv=document.getElementById("div1");
+    let oBtn=document.getElementById("btn");
+    oBtn.onclick=function () {
+     let timer=setInterval(function () {
+            oDiv.style.width=oDiv.offsetWidth + 10 +"px";
+            if(oDiv.offsetWidth>=500){
+               clearInterval(timer)
+            }
+        },50)
+    }
+</script>
+</body>
+</html>
